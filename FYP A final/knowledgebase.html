@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang='en' data-ng-app='plunker'>
+
+<head>
+    <title>profile edit</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+
+    <link type="text/css" href="css/helpdesk.css" rel="stylesheet" />
+    <link type="text/css" href="css/account.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div data-ng-include="'templates/nav.php'"></div>
+
+    
+<div class="container top">
+ <div class="white">
+  <h2>Welcome to the knowledge Base</h2>
+  <p>Below shows the common known error or normal bugs that will happen to customer and we provide a solution to the known bugs or error</p>
+    
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+            <!--knowledgebase 1-->
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">>Error 404 not found</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+            <ol>
+                <li>Retry the web page by pressing F5, clicking/tapping the refresh/reload button, or trying the URL from the address bar again.</li>
+                <li>Check for errors in the URL. Often times the 404 Not Found error appears because the URL was typed wrong or the link that was clicked on points to the wrong URL.</li>
+                <li>Move up one directory level at a time in the URL until you find something.</li>
+            </ol>
+            <p>If above solution is not fixed, please <a href = "mailto:abc@example.com?subject = Feedback&body = Message"> Send Feedback </a> to our service team</p>
+          </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+                <!--knowledgebase 2-->
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">>Can't seems to log in into the server</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+            <ol>
+                <li>There might be an error while you were entering your email or password. please try again correctly</li>
+                <li>if you forgot you password, try to press "forgot password" in the login page.</li>
+            </ol>
+            <p>If above solution is not fixed, please <a href = "mailto:abc@example.com?subject = Feedback&body = Message"> Send Feedback </a> to our service team</p>
+          </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+                <!--knowledgebase 3-->
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">>How to register an account for myself</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ol>
+            <li>Press on <strong>Login</strong> button.</li>
+              <li>Press on <strong>Register</strong> buton on the bottom of the log in field.</li>
+              <li>Enter your details based on the field that are give to you in the registraton form.</li>
+              <li>ress on <strong>Save</strong>, and the process is done.</li>
+            </ol>
+          </div>
+      </div>
+    </div>
+      <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+                <!--knowledgebase 4-->
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">>extra data</a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ol>
+            <li>Press on <strong>Login</strong> button.</li>
+              <li>Press on <strong>Register</strong> buton on the bottom of the log in field.</li>
+              <li>Enter your details based on the field that are give to you in the registraton form.</li>
+              <li>ress on <strong>Save</strong>, and the process is done.</li>
+            </ol>
+          </div>
+      </div>
+    </div>
+       <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+                <!--knowledgebase 4-->
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">>extra data</a>
+        </h4>
+      </div>
+      <div id="collapse5" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ol>
+            <li>Press on <strong>Login</strong> button.</li>
+              <li>Press on <strong>Register</strong> buton on the bottom of the log in field.</li>
+              <li>Enter your details based on the field that are give to you in the registraton form.</li>
+              <li>ress on <strong>Save</strong>, and the process is done.</li>
+            </ol>
+          </div>
+      </div>
+    </div>
+       <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+                <!--knowledgebase 4-->
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">>extra data</a>
+        </h4>
+      </div>
+      <div id="collapse6" class="panel-collapse collapse">
+        <div class="panel-body">
+          <ol>
+            <li>Press on <strong>Login</strong> button.</li>
+              <li>Press on <strong>Register</strong> buton on the bottom of the log in field.</li>
+              <li>Enter your details based on the field that are give to you in the registraton form.</li>
+              <li>ress on <strong>Save</strong>, and the process is done.</li>
+            </ol>
+          </div>
+      </div>
+    </div>
+  </div> 
+</div>
+   </div>
+    
+<!--<div class="footer"data-ng-include="'templates/footer.html'"></div>-->
+<div class="fixed-bottom" style="margin-bottom: 0" data-ng-include="'templates/footer.html'"></div>
+
+    
+    <!--angular.min.js-->
+    <script src="angularjs/angular.min.js"></script>
+    <script src="angularjs/angular-route.min.js"></script>
+    <script src="angularjs/app.js"></script>
+<!--    <script src="angularjs/editprofile.js"></script>-->
+
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--popper.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+
+    <!--bootstrap js-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body></html>
