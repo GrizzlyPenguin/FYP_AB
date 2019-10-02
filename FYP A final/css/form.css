@@ -1,12 +1,10 @@
+#body{
+    align-content: center;
+}
 label{
     color: black;
     font-style: normal;
     font-weight: bolder;
-    margin-left: 20px;
-}
-
-form, div.col-xs-6{
-    font-family: sans-serif;
 }
 
 br{
