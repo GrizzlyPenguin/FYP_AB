@@ -35,6 +35,14 @@ row{
     padding: inherit;
 }
 
-button{
-    text-align: center;
+#button_section{
+    margin: auto;
+    width: 50%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+button{    
 }
