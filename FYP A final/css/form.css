@@ -10,7 +10,7 @@ form, div.col-xs-6{
 }
 
 br{
-border: solid;
+    border: solid;
     color: black;
 }
 
@@ -22,7 +22,7 @@ table, td , tr{
 th{
     border: solid 2px;
     width:1%;
-word-break: break-all;
+    word-break: break-all;
 }
 
 hr{
@@ -41,7 +41,4 @@ row{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
-
-button{    
 }
