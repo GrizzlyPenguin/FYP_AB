@@ -16,14 +16,13 @@ border: solid;
 
 table, td , tr{
     border: solid 2px;
-    table-layout: fixed;
+    table-layout: auto;
 }
 
 th{
     border: solid 2px;
     width:1%;
-    
-    white-space: nowrap;
+word-break: break-all;
 }
 
 hr{
