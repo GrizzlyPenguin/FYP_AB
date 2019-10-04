@@ -1,29 +1,27 @@
+#body{
+    align-content: center;
+}
+
 label{
     color: black;
     font-style: normal;
     font-weight: bolder;
-    margin-left: 20px;
-}
-
-form, div.col-xs-6{
-    font-family: sans-serif;
 }
 
 br{
-border: solid;
+    border: solid;
     color: black;
 }
 
 table, td , tr{
     border: solid 2px;
-    table-layout: fixed;
+    table-layout: auto;
 }
 
 th{
     border: solid 2px;
     width:1%;
-    
-    white-space: nowrap;
+    word-break: break-all;
 }
 
 hr{
@@ -34,8 +32,7 @@ row{
     align-content: center;
     padding: inherit;
 }
-
 .button{
     text-align: center;
-    margin-left: 100px;
+    margin-left: 100px
 }
