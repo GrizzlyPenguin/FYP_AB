@@ -110,10 +110,9 @@ app.controller("putCtrl", function ($scope, $http) {
     };
     
     $scope.postLog = function (Diagnosis, findings, others, cause, UserID, ticketID) {
+        // Prepare the data        
         $scope.msg=alert("Thank you! You have submitted the Log!");
         $scope.refresh=location.reload();
-        // Prepare the data        
-        
         var url = "api/insertHistoryLog.php",
             data = $.param({
                 Diagnosis: Diagnosis,
@@ -232,7 +231,7 @@ app.controller("postCtrl", function ($scope, $http) {
                     // there may be instances of put failure
                     if (response.data) {
                         $scope.CustName = response.data;
-                        console.log(response.data);
+//                        console.log(response.data);
                     }
                 },
                 function (response) {
@@ -245,7 +244,7 @@ app.controller("postCtrl", function ($scope, $http) {
     
     $scope.getLog = function (pid, tNo) {
         // Prepare the data        
-        console.log("getLog");
+        console.log(tNo);
         var url = "api/getDiagnosis.php",
             data = $.param({
                 UserID: pid,

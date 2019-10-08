@@ -49,7 +49,7 @@
                                     <td>{{ticket.date}}</td>
                                     <td class="{{ticket.status}}"><b>{{ticket.status}}</b></td>
                                     <td data-ng-show="role">
-                                        <button id="edit" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#editModal" data-ng-click="init(ticket); searchName(ticket.pid); getLog(ticket.pid, ticket.ticketNo)"><i class="fas fa-edit"></i></button>
+                                        <button id="edit" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#editModal" data-ng-click="init(ticket); searchName(ticket.pid); getLog(EmpID, ticket.ticketNo)"><i class="fas fa-edit"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -166,7 +166,7 @@
                                     </div>
                                     <hr>
                                     <!--            lvl b-->
-                                    <div id="lvlb_section">
+                                    <div id="lvlb_section" data-ng-hide="role">
                                         <p>Level B:</p>
 
                                         <label>Diagnosis:</label> <br>
@@ -206,13 +206,15 @@
                                         <br>
                                         <label id="lastedit" style="color: black"> Last Edited by: </label> <br>
                                         <label id="lasteditname" style="font-style: normal; font-weight: normal">date_name_id</label>
-                                    </div>
-                                    <br>
+                                        
+                                        <br>
                                     <hr>
+                                    </div>
+                                    
                                     <br>
                                     <div class="row">
                                         <div id="button_section">
-                                            <button type="submit" data-ng-click="postLog(diagnosis, findings, others, cause, EmpID, tno); postLog(diagnosis1, findings1, others1, cause1, EmpID, tno)">Submit</button>
+                                            <button type="submit" data-ng-click="postLog(diagnosis, findings, others, cause, EmpID, tno)">Submit</button>
                                             <button type="reset">Reset</button>
                                             <button type="button">Cancel</button>
                                         </div>
