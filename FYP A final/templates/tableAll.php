@@ -139,7 +139,6 @@
                              <div class="form-group">
                                  <label for="Textarea"><b>Company Name</b></label>
                                  <p class="w-100 p-0" id="Textarea">PC image</p>
-                                 
                                  <label for="Textarea"><b>Email</b></label>
                                  <p class="w-100 p-0" id="Textarea">PCimage@gmail.com</p>
                                  <label for="Textarea"><b>Contact Number</b></label>

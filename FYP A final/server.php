@@ -100,7 +100,6 @@
              $queryEmpID = mysqli_query($db, "SELECT EmpID, Role FROM EMPLOYEE WHERE EmpName='$username'");
              $row2 = mysqli_fetch_assoc($queryEmpID);
             
-
                 $_SESSION['CustID'] = $row['CustID'];
 //                $_SESSION['CustID'] = $row2['EmpID'];
                 $_SESSION['Name'] = $row['Name'];

@@ -13,10 +13,6 @@ CREATE TABLE IF NOT EXISTS `TICKET` (
     `SourceOnline` varchar(50) NOT NULL,
     `SourceOffline` varchar(50) NOT NULL,
     `Warranty` char(3),
-    `Diagnosis` varchar(100),
-    `Findings` varchar(100),
-    `Others` varchar(100),
-    `Cause` varchar(100),
     `StaffID` int(3) REFERENCES EMPLOYEE(EmpID),
     `JobID` varchar(3)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

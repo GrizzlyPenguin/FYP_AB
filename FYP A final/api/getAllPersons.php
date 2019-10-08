@@ -11,6 +11,7 @@
  		$outp .= '"title":"'  . $rs["TicketTitle"] . '",';
         $outp .= '"desc":"'  . $rs["TicketDesc"] . '",'; 
         $outp .= '"pid":"'  . $rs["PID"] . '",'; 
+        $outp .= '"domain":"'  . $rs["DomainName"] . '",'; 
         $outp .= '"date":"'  . $rs["DateReceived"] . '",';
         $outp .= '"status":"' . $rs["Status"] . '",'; 
         $outp .= '"StaffID":"' . $rs["StaffID"] . '"}'; 
