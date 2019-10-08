@@ -46,7 +46,7 @@
                                  </tr>
                              </thead>
                              <tbody>
-                                 <tr data-ng-repeat="ticket in tickets|orderBy:column:reverse|filter:searchword">
+                                 <tr data-ng-repeat="ticket in tickets|orderBy:column:reverse|filter:searchword[searchcol]">
                                      <td>{{ticket.ticketNo|number}}</td>
                                      <td>{{ticket.title}}</td>
                                      <td>{{ticket.desc}}</td>
