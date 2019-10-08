@@ -1,0 +1,36 @@
+.page-left-bar {
+  width: 200px;
+  background-color: #fff;
+}
+
+ol {
+  margin-left: 0px;
+  padding-left: 20px;
+}
+
+.handbook-page ol {
+  color: #687074;
+  counter-reset: item;
+}
+
+ol {
+  counter-reset: item;
+  color: #687074;
+}
+
+ol li {
+  display: block;
+  padding: 5px 0;
+}
+
+ol li a {
+  text-decoration: none;
+  color: #687074;
+  padding-left: 10px;
+}
+
+ol li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+  font-weight: bold;
+}
