@@ -198,7 +198,7 @@ app.controller("postCtrl", function ($scope, $http) {
 //table header sort
 app.controller('sort', function ($scope, $location) {
     // column to sort
-    $scope.column = 'ticketNo';
+    $scope.sortColumn = 'ticketNo';
     
     // sort ordering (Ascending or Descending). Set true for desending
     $scope.reverse = false;
