@@ -3,9 +3,9 @@ SET GLOBAL time_zone = '+8:00';
 
 
 CREATE TABLE IF NOT EXISTS `FORM` (
-`TicketNo` int(3) NOT NULL,
-  `JobType` varchar(50) NOT NULL,
-  `Name` varchar(100) NOT NULL,
+  `TicketNo` int(3) NOT NULL REFERENCES TICKET(TicketNo),
+  `JobType` varchar(50) NOT NULL REFERENCES JOB(JobType),
+  `Name` varchar(100) NOT NULL REFERENCES CUSTOMER(CustomerName),
     `PID` int(3) NOT NULL,
     `Warranty` char(3) NOT NULL,
     `Diagnosis` varchar(500) NOT NULL,
@@ -16,8 +16,6 @@ CREATE TABLE IF NOT EXISTS `FORM` (
     `DateReceived` date NOT NULL,
     `StaffID` int(3) NOT NULL REFERENCES EMPLOYEE(EmpID)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
-
 
 
 ALTER TABLE `FORM`

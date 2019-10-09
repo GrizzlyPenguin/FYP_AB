@@ -41,22 +41,27 @@ app.config(function ($routeProvider) {
 app.controller("getCtrl", function ($scope, $http) {
     'use strict';
 
-    $scope.temp = {};
-
     $http.get('api/getAllPersons.php')
         .then(
             function (response) {
                 $scope.tickets = response.data;
+                console.log(response.data);
             },
             function (response) {
+                console.log(response.data);
                 // error handling routine
             });
-
+    
+    
     $scope.init = function (obj) {
         $scope.tno = obj.ticketNo;
         $scope.title = obj.title;
         $scope.desc = obj.desc;
+        $scope.warran = obj.warranty;
+        $scope.domainName = obj.domain;
+        $scope.name = obj.Name;
     };
+    
 });
 
 
@@ -73,9 +78,8 @@ app.controller("putCtrl", function ($scope, $http) {
 
     $scope.custInit = function (pid) {
         $scope.CustID = pid;
-        console.log(pid);
+        //console.log(pid);
     };
-
 
     $scope.putData = function (TicketNo, EmpID) {
         // Prepare the data
@@ -108,31 +112,36 @@ app.controller("putCtrl", function ($scope, $http) {
                     $scope.headers = response.headers();
                 });
     };
-
-    $scope.putForm = function (TicketNo, title, desc, status) {
-        // Prepare the data
+    
+    $scope.postLog = function (Diagnosis, findings, others, cause, UserID, ticketID) {
+        // Prepare the data        
+        $scope.msg=alert("Thank you! You have submitted the Log!");
         $scope.refresh=location.reload();
-        var url = "api/updatePerson.php";
-        var data = $.param({
-            TicketNo: TicketNo,
-            title: title,
-            desc: desc,
-            status: status
-        });
-        var config = {
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-            }
-        }
-
+        var url = "api/insertHistoryLog.php",
+            data = $.param({
+                Diagnosis: Diagnosis,
+                findings: findings,
+                pid: UserID,
+                others: others,
+                cause: cause,
+                ticketID: ticketID
+            }),
+            config = {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+        
         //Call the services
-        $http.put(url, data, config)
+        $http.post(url, data, config)
             .then(
                 function (response) {
                     // depends on the data value
                     // there may be instances of put failure
-                    if (response.data)
-                        $scope.msg = response.data;
+                    if (response.data) {
+                        
+                        console.log(response.data);
+                    }
                 },
                 function (response) {
                     $scope.msg = "Service not Exists";
@@ -140,6 +149,7 @@ app.controller("putCtrl", function ($scope, $http) {
                     $scope.statustext = response.statusText;
                     $scope.headers = response.headers();
                 });
+        
     };
 });
 
@@ -148,19 +158,26 @@ app.controller("postCtrl", function ($scope, $http) {
     'use strict';
     $scope.TicketTitle = null;
     $scope.TicketDesc = null;
-   
+    $scope.warranty = null;
+    $scope.domain = null;
+    $scope.Status = null;
+    $scope.diagnosis = null;
+    $scope.findings = null;
+    $scope.others = null;
+    $scope.cause = null;
 
     $scope.userInit = function (uid) {
         $scope.UserID = uid;
+        //console.log(uid);
     };
 
     $scope.roleInit = function (role) {
         $scope.role = role;
-        console.log(role);
+        //console.log(role);
     };
 
     // define methods
-    $scope.postData = function (TicketTitle, TicketDesc, UserID) {
+    $scope.postData = function (TicketTitle, TicketDesc, UserID, warranty, domain, Status) {
         // Prepare the data        
         $scope.msg=alert("Thank you! You have submitted the ticket!");
         $scope.redirect=window.location="Dashboard.php#Pending";
@@ -168,13 +185,17 @@ app.controller("postCtrl", function ($scope, $http) {
             data = $.param({
                 TicketTitle: TicketTitle,
                 TicketDesc: TicketDesc,
-                UserID: UserID
+                UserID: UserID,
+                warranty: warranty,
+                domain: domain,
+                Status: Status
             }),
             config = {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
                 }
             };
+        
         //Call the services
         $http.post(url, data, config)
             .then(
@@ -183,7 +204,7 @@ app.controller("postCtrl", function ($scope, $http) {
                     // there may be instances of put failure
                     if (response.data) {
                         $scope.msg = response.data;
-                        //console.log(response.data);
+                        console.log(response.data);
                     }
                 },
                 function (response) {
@@ -191,6 +212,149 @@ app.controller("postCtrl", function ($scope, $http) {
                     $scope.statusval = response.status;
                     $scope.statustext = response.statusText;
                     $scope.headers = response.headers();
+                });
+    };
+    
+      // define methods
+    $scope.searchName = function (pid) {
+        // Prepare the data        
+        console.log("searchName");
+        var url = "api/getCustName.php",
+            data = $.param({
+                pid: pid
+            }),
+            config = {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+        
+        $http.post(url, data, config)
+            .then(
+                function (response) {
+                    // depends on the data value
+                    // there may be instances of put failure
+                    if (response.data) {
+                        $scope.CustName = response.data;
+//                        console.log(response.data);
+                    }
+                },
+                function (response) {
+                    console.log("Service not Exists");
+                    $scope.statusval = response.status;
+                    $scope.statustext = response.statusText;
+                    $scope.headers = response.headers();
+                });
+    };
+    
+    $scope.getLog = function (pid, tNo) {
+        // Prepare the data        
+        console.log(tNo);
+        var url = "api/getDiagnosis.php",
+            data = $.param({
+                UserID: pid,
+                tNo: tNo
+            }),
+            config = {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+        
+        $http.post(url, data, config)
+            .then(
+                function (response) {
+                    if (response.data) {
+                        $scope.diagnosis = response.data;
+                        console.log(response.data);
+                    }
+                },
+                function (response) {
+                    console.log("Service not Exists");
+                    $scope.statusval = response.status;
+                    $scope.statustext = response.statusText;
+                    $scope.headers = response.headers;
+                    console.log(response.data);
+                });
+        
+        var url1 = "api/getFindings.php",
+            data = $.param({
+                UserID: pid,
+                tNo: tNo
+            }),
+            config = {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+        
+        $http.post(url1, data, config)
+            .then(
+                function (response) {
+                    if (response.data) {
+                        $scope.findings = response.data;
+                        console.log(response.data);
+                    }
+                },
+                function (response) {
+                    console.log("Service not Exists");
+                    $scope.statusval = response.status;
+                    $scope.statustext = response.statusText;
+                    $scope.headers = response.headers;
+                    console.log(response.data);
+                });
+        
+        var url2 = "api/getOthers.php",
+            data = $.param({
+                UserID: pid,
+                tNo: tNo
+            }),
+            config = {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+        
+        $http.post(url2, data, config)
+            .then(
+                function (response) {
+                    if (response.data) {
+                        $scope.others = response.data;
+                        console.log(response.data);
+                    }
+                },
+                function (response) {
+                    console.log("Service not Exists");
+                    $scope.statusval = response.status;
+                    $scope.statustext = response.statusText;
+                    $scope.headers = response.headers;
+                    console.log(response.data);
+                });
+        
+        var url3 = "api/getCause.php",
+            data = $.param({
+                UserID: pid,
+                tNo: tNo
+            }),
+            config = {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+        $http.post(url3, data, config)
+            .then(
+                function (response) {
+                    if (response.data) {
+                        $scope.cause = response.data;
+                        console.log(response.data);
+                    }
+                },
+                function (response) {
+                    console.log("Service not Exists");
+                    $scope.statusval = response.status;
+                    $scope.statustext = response.statusText;
+                    $scope.headers = response.headers;
+                    console.log(response.data);
                 });
     };
 });
