@@ -111,7 +111,7 @@
     <!--angular.min.js-->
     <script src="angularjs/angular.min.js"></script>
     <script src="angularjs/angular-route.min.js"></script>
-    <script src="angularjs/helpdesk.js"></script>
+    <script src="angularjs/Helpdesk.js"></script>
 
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
