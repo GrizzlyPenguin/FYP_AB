@@ -45,8 +45,10 @@ app.controller("getCtrl", function ($scope, $http) {
         .then(
             function (response) {
                 $scope.tickets = response.data;
+                console.log(response.data);
             },
             function (response) {
+                console.log(response.data);
                 // error handling routine
             });
     
@@ -55,7 +57,9 @@ app.controller("getCtrl", function ($scope, $http) {
         $scope.tno = obj.ticketNo;
         $scope.title = obj.title;
         $scope.desc = obj.desc;
+        $scope.warran = obj.warranty;
         $scope.domainName = obj.domain;
+        $scope.name = obj.Name;
     };
     
 });
@@ -214,6 +218,7 @@ app.controller("postCtrl", function ($scope, $http) {
       // define methods
     $scope.searchName = function (pid) {
         // Prepare the data        
+        console.log("searchName");
         var url = "api/getCustName.php",
             data = $.param({
                 pid: pid

@@ -26,7 +26,7 @@ include('../server.php');
                     <a href="#Pending" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         Personal
                     </a>
-                    <ul class="collapse list-unstyled" id="Pending">
+                    <ul class="list-unstyled collapse show" id="Pending">
                         <li>
                             <a href="#Pending">Pending</a>
                         </li>

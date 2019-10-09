@@ -9,14 +9,14 @@
             <div class="table-responsive">
                 <table data-ng-controller="getCtrl" id="open" class="table table-striped table-sm table-bordered table-hover">
                     <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th ng-click='sortColumn("ticketNo")' class="th-sm">Ticket No
                             </th>
                             <th ng-click='sortColumn("title")' class="th-sm">Title
                             </th>
                             <th ng-click='sortColumn("desc")' class="th-sm">Description
                             </th>
-                            <th ng-click='sortColumn("pid")' class="th-sm">PID
+                            <th ng-click='sortColumn("pid")' class="th-sm">Name
                             </th>
                             <th ng-click='sortColumn("date")' class="th-sm">Date Created
                             </th>
@@ -28,13 +28,13 @@
                         <span class="sr-only" data-ng-init="empInit('<?php echo $_SESSION['EmpID']; ?>')"></span>
                         <script>console.log(tickets.length);</script>
                         <tbody>
-                            <tr data-ng-repeat="ticket in tickets|orderBy:column:reverse|filter:searchText" data-ng-show="ticket.status=='Open'">
+                            <tr class="text-center" data-ng-repeat="ticket in tickets|orderBy:column:reverse|filter:searchText" data-ng-show="ticket.status=='Open'">
                                 <td>{{ticket.ticketNo}}</td>
                                 <td>{{ticket.title}}</td>
                                 <td>{{ticket.desc}}</td>
-                                <td>{{ticket.pid}}</td>
+                                <td>{{ticket.Name}}</td>
                                 <td>{{ticket.date}}</td>
-                                <td class="text-center"><button class="btn btn-primary" data-ng-click="putData(ticket.ticketNo, EmpID)">Accept</button></td>
+                                <td><button class="btn btn-primary" data-ng-click="putData(ticket.ticketNo, EmpID)">Accept</button></td>
                             </tr>
                         </tbody>
                     </div>
