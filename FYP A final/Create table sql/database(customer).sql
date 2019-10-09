@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS `CUSTOMER` (
     `Email` varchar(30) NOT NULL,
     `ContactNumber` varchar(11) NOT NULL,
     `username` varchar(20) NOT NULL,
-    `Password` varchar(20) NOT NULL
+    `Password` varchar(50) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 
