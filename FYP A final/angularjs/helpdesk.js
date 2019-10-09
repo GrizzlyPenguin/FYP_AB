@@ -208,10 +208,8 @@ app.controller('sort', function ($scope, $location) {
         $scope.column = col;
         if ($scope.reverse) {
             $scope.reverse = false;
-            $scope.reverseclass = 'arrow-up';
         } else {
             $scope.reverse = true;
-            $scope.reverseclass = 'arrow-down';
         }
     };
 
@@ -399,6 +397,20 @@ it('should use a equal comparison when comparator is true', function () {
     searchName.sendKeys('Pending');
     strict.click();
     expectFriendNames(['Pending'], 'ticObj');
+});
+
+ it('should format numbers', function() {
+   expect(element(by.id('number-default')).getText()).toBe('1,234.568');
+   expect(element(by.binding('ticket.ticketNo | number:0')).getText()).toBe('1,235');
+   expect(element(by.binding('-ticket.ticketNo | number:4')).getText()).toBe('-1,234.5679');
+ });
+
+ it('should update', function() {
+   element(by.model('ticket.ticketNo')).clear();
+   element(by.model('ticket.ticketNo')).sendKeys('3374.333');
+   expect(element(by.id('number-default')).getText()).toBe('3,374.333');
+   expect(element(by.binding('ticket.ticketNo | number:0')).getText()).toBe('3,374');
+   expect(element(by.binding('-ticket.ticketNo | number:4')).getText()).toBe('-3,374.3330');
 });
 
 ////////////////////////////////////////////////////

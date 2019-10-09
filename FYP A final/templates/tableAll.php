@@ -14,7 +14,8 @@
                      <div class="form-inline">
                          <label for="searchType">Search by:</label>
                          <select id="searchType" class="form-control" ng-model="searchcol">
-                             <option value='$' selected>Any</option>
+                             <option disabled selected value> -- select an option -- </option>
+                             <option value='$' selected="selected">Any</option>
                              <option value='ticketNo'>ticketNo</option>
                              <option value='title'>title</option>
                              <option value='desc'>desc</option>
@@ -47,7 +48,7 @@
                              </thead>
                              <tbody>
                                  <tr data-ng-repeat="ticket in tickets|orderBy:column:reverse|filter:searchword[searchcol]">
-                                     <td>{{ticket.ticketNo|number}}</td>
+                                     <td>{{ticket.ticketNo|number:0}}</td>
                                      <td>{{ticket.title}}</td>
                                      <td>{{ticket.desc}}</td>
                                      <td>{{ticket.pid}}</td>
