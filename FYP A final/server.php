@@ -34,6 +34,9 @@
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
 			//encrypt the password before saving in the database
+            $Password_1 = md5($Password_1);
+            $Password_2 = md5($Password_2);
+            
 			$query = "INSERT INTO CUSTOMER (Name, Address, username, Email, Password, ContactNumber) 
 					  VALUES('$Name', '$Address',  '$username', '$Email', '$Password_1', '$ContactNumber')";
 			mysqli_query($db, $query);
@@ -65,6 +68,7 @@
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
 			//encrypt the password before saving in the database
+            $Password_1 = md5($Password_1);
 			$query = "INSERT INTO EMPLOYEE (EmpName, Password, Role) 
 					  VALUES('$username', '$Password_1', '$position')";
 			mysqli_query($db, $query);
@@ -75,10 +79,15 @@
 		}
 	}
 
+
 	// LOGIN USER
 	if (isset($_POST['login_user'])) {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
-		$Password = mysqli_real_escape_string($db, $_POST['Password']);
+		/*$Password = mysqli_real_escape_string($db, $_POST['Password']);*/
+        $Password = md5(mysqli_real_escape_string($db, $_POST['Password']));
+        
+
+        
 
 		if (empty($username)) {
 			array_push($errors, "Username is required");
@@ -88,7 +97,7 @@
 		}
 
 		if (count($errors) == 0) {
-			//$Password = md5($Password);
+			
 			$query = "SELECT * FROM CUSTOMER WHERE username='$username' AND Password='$Password'";
 			$results = mysqli_query($db, $query); 
             $query2 = "SELECT * FROM EMPLOYEE WHERE EmpName='$username' AND Password='$Password'";

@@ -37,19 +37,23 @@
 	$conn->close();
 ?>*/
 
-
-
-
-
-/*    From Desmond
-    if($put_vars['Password'] !== '')
+ /*   if($put_vars['Password'] !== '')
     {
+
         $Password = $put_vars['Password'];
+        $Password = md5($Password);
         
         if($put_vars['NewPassword'] !== '')
         {
             $NewPassword = $put_vars['NewPassword'];
+            $NewPassword = md5($NewPassword);
             $sql = "UPDATE CUSTOMER SET Password = '" . $NewPassword . "' WHERE Password = '". $Password ."';";
+            
+            if ($conn->query($sql) === TRUE) {
+                echo ("Updated Sucessfully!");
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
         }
     }*/
         

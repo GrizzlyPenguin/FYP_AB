@@ -1,5 +1,6 @@
 <?php 
-	session_start(); 
+include('server.php');
+	
 ?>
 
 <!DOCTYPE html>
@@ -35,16 +36,16 @@
             </div>
             <?php  if (isset($_SESSION['username'])) : ?>
             <div class="accountdetail">
-                <label id="name"><strong>Name:</strong></label><br /><input type="text" class="input-large" id="telephone" value="<?php echo $_SESSION['Name'] ?>" readonly />
+                <label id="name"><strong>Name:</strong></label><br /><input type="text" class="input-large" value="<?php echo $_SESSION['Name'] ?>" readonly />
                 <br />
                 <label id="email"><strong>Address:</strong></label><br />
-                <input type="text" id="telephone" value="<?php echo $_SESSION['Address'] ?>" class="input-large" readonly /><br /><br />
+                <input type="text" value="<?php echo $_SESSION['Address'] ?>" class="input-large" readonly /><br /><br />
                 <label id="ContactN">Contact Number:</label><br />
                 <input type="text" id="telephone" value="<?php echo $_SESSION['ContactNumber'] ?>" readonly /><br />
                 <label><strong>E-mail:</strong></label><br />
                 <input type="text" id="email" value="<?php echo $_SESSION['Email'] ?>" /><br />
 
-                <!--<p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Change Password</button></p>-->
+                <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Change Password</button></p>
             </div>
             <div class="container">
 
@@ -55,13 +56,14 @@
 
                             <!-- Modal Header -->
                             <div class="modal-header">
-                                <h4 class="modal-title">Ticket Form</h4>
+                                <h4 class="modal-title">Change Password</h4>
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
 
                             <!-- Modal body -->
                             <div class="modal-body">
-                                <form method="get" id="ticketForm">
+                                <form action="" method="post">
+                                   <?php include('errors.php') ?>
                                     <!--
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Type of Problems</label>
@@ -75,16 +77,12 @@
                             </div>
 -->
                                     <div class="form-group">
-                                        <label for="title">Title</label>
-                                        <input type="text" class="form-control w-100" data-ng-model="Password" id="title">
+                                        <label for="Old Password">Current Password</label>
+                                        <input type="password" class="form-control w-75" name="Password_1" id="Password" data-ng-model="oldPw">
                                     </div>
                                     <div class="form-group">
-                                        <label for="Textarea1">Description</label>
-                                        <textarea class="form-control" id="Textarea1" rows="3" data-ng-model="NewPassword"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="FormControlFile1">Attachments</label>
-                                        <input type="file" class="form-control-file" id="FormControlFile1">
+                                        <label for="Textarea1">New Password</label>
+                                        <input type="password" id="NewPassword" class="form-control w-75" name="NewPassword" data-ng-model="newPw">
                                     </div>
                                 </form>
                             </div>
@@ -92,7 +90,7 @@
                             <!-- Modal footer -->
                             <div class="modal-footer">
 
-                                <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="putData(Password, NewPassword)" data-dismiss="modal">Submit</button>
+                                <button type="submit" form="ticketForm" value="Submit" data-ng-click="putPassword(oldPw, newPw)" class="btn btn-primary" type="submit" name="change_pw" data-dismiss="modal">Submit</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>

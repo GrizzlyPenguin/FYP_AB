@@ -17,6 +17,43 @@ app.controller('MainCtrl', function($scope) {
   ];
 });
 
+app.controller("putCtrl", function ($scope, $http) {
+    $scope.putPassword = function (Password,NewPassword) {
+        // Prepare the data
+        
+        $scope.msg=alert("Password is successfully accepted!");
+        var url = "api/updatePassword.php";
+        /*$scope.refresh=location.reload();*/
+        var data = $.param({
+            Password: Password,
+            NewPassword: NewPassword
+        });
+        var config = {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+            }
+        };
+        //Call the services
+        $http.put(url, data, config)
+            .then(
+                function (response) {
+                    // depends on the data value
+                    // there may be instances of put failure
+                    if (response.data)
+                        {
+                        $scope.msg = response.data;
+                    console.log(response.data);
+                            }
+                },
+                function (response) {
+                    $scope.msg = "Service not Exists";
+                    $scope.statusval = response.status;
+                    $scope.statustext = response.statusText;
+                    $scope.headers = response.headers();
+                });
+    };
+});
+
 // On esc event
 app.directive('onEsc', function() {
   return function(scope, elm, attr) {
