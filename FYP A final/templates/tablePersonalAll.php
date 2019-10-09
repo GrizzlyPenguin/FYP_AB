@@ -16,14 +16,14 @@
             <div class="table-responsive">
                 <table id="personal" class="table table-sm table-striped table-bordered table-hover">
                     <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th ng-click='sortColumn("ticketNo")' class="th-sm">Ticket No
                             </th>
                             <th ng-click='sortColumn("title")' class="th-sm">Title
                             </th>
                             <th ng-click='sortColumn("desc")' class="th-sm">Description
                             </th>
-                            <th ng-click='sortColumn("pid")' class="th-sm">PID
+                            <th ng-click='sortColumn("pid")' class="th-sm">Name
                             </th>
                             <th ng-click='sortColumn("date")' class="th-sm">Date Created
                             </th>
@@ -35,11 +35,11 @@
                         <span class="sr-only" data-ng-init="empInit('<?php echo $_SESSION['EmpID']; ?>')"></span>
                         <span class="sr-only" data-ng-init="custInit('<?php echo $_SESSION['CustID']; ?>')"></span>
                         <tbody>
-                            <tr data-ng-repeat="ticket in tickets |orderBy:column:reverse|filter:searchText" data-ng-show="(((ticket.status=='Pending' || ticket.status=='Solved') && ticket.StaffID==EmpID) ||ticket.pid==CustID && (ticket.status=='Pending' || ticket.status=='Solved' || ticket.status=='Open'))" data-ng-click="init(ticket)">
+                            <tr class="text-center" data-ng-repeat="ticket in tickets |orderBy:column:reverse|filter:searchText" data-ng-show="(((ticket.status=='Pending' || ticket.status=='Solved') && ticket.StaffID==EmpID) ||ticket.pid==CustID && (ticket.status=='Pending' || ticket.status=='Solved' || ticket.status=='Open'))" data-ng-click="init(ticket)">
                                 <td>{{ticket.ticketNo}}</td>
                                 <td>{{ticket.title}}</td>
                                 <td>{{ticket.desc}}</td>
-                                <td>{{ticket.pid}}</td>
+                                <td>{{ticket.Name}}</td>
                                 <td>{{ticket.date}}</td>
                                 <td class="{{ticket.status}}"><b>{{ticket.status}}</b></td>
                             </tr>

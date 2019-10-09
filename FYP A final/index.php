@@ -27,7 +27,6 @@
     <link type="text/css" href="css/helpdesk.css" rel="stylesheet" />
 </head>
 
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
@@ -78,8 +77,6 @@
         </div>
     </nav>
 
-
-
     <div class="background">
         <div class="jumbotron jumbotron-fluid">
             <div class="container vertical-center" id="test">
@@ -101,7 +98,6 @@
                     <a class="btn" href="knowledgebase.html">FAQ</a>
                 </div>
                 
-
             </div>
         </div>
     </div>
@@ -143,6 +139,18 @@
                                 <textarea class="form-control" id="Textarea1" rows="3" data-ng-model="TicketDesc"></textarea>
                             </div>
                             <div class="form-group">
+                                <label for="warranty">Warranty</label> <br/>
+                                    <label>
+                                    <input type="radio" ng-model="warranty" value="yes">Yes
+                                    <span style="margin-right: 25px"></span>
+                                    <input type="radio" ng-model="warranty" value="no">No
+                                </label><br/>
+                            </div>
+                            <div class="form-group">
+                                <label for="domain">Domain name</label>
+                                <input type="text" class="form-control w-100" data-ng-model="domain" id="domain">
+                            </div>
+                            <div class="form-group">
                                 <label for="FormControlFile1">Attachments</label>
                                 <input type="file" class="form-control-file" id="FormControlFile1">
                             </div>
@@ -152,7 +160,7 @@
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <span class="sr-only" data-ng-init="userInit('<?php echo $_SESSION['CustID']; ?>')"></span>
-                        <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postData(TicketTitle, TicketDesc, UserID)" data-dismiss="modal">Submit</button>
+                        <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postData(TicketTitle, TicketDesc, UserID, warranty, domain)" data-dismiss="modal">Submit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
