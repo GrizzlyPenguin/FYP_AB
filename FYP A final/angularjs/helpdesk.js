@@ -215,19 +215,6 @@ app.controller('sort', function ($scope, $location) {
         }
     };
 
-    // remove and change class
-    $scope.sortClass = function (col) {
-        if ($scope.column == col) {
-            if ($scope.reverse) {
-                return 'arrow-down';
-            } else {
-                return 'arrow-up';
-            }
-        } else {
-            return '';
-        }
-    }
-
     $scope.gotolink = function (ticket) {
         $location.path('#/ticket/' + tic.ticketNo);
     };
