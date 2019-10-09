@@ -75,8 +75,7 @@ app.controller("putCtrl", function ($scope, $http) {
         $scope.CustID = pid;
         console.log(pid);
     };
-
-
+    
     $scope.putData = function (TicketNo, EmpID) {
         // Prepare the data
         
