@@ -78,11 +78,11 @@ include('server.php');
 -->
                                     <div class="form-group">
                                         <label for="Old Password">Current Password</label>
-                                        <input type="password" class="form-control w-100" name="Password_1" id="Password" data-ng-model="oldPw">
+                                        <input type="password" class="form-control w-75" name="Password_1" id="Password" data-ng-model="oldPw">
                                     </div>
                                     <div class="form-group">
                                         <label for="Textarea1">New Password</label>
-                                        <textarea class="form-control" id="NewPassword" rows="3" name="NewPassword" data-ng-model="newPw"></textarea>
+                                        <input type="password" id="NewPassword" class="form-control w-75" name="NewPassword" data-ng-model="newPw">
                                     </div>
                                 </form>
                             </div>
