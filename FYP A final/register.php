@@ -29,7 +29,7 @@
                         <div class="card-body">
                             <h2 class="text-center">Register</h2>
 
-                            <form method="post" action="register.php">
+                            <form method="post" action="register.php" >
                                 <?php include('errors.php') ?>
                                 <div class="form-group">
                                     <label class="m-0" for="name">Name</label>
@@ -47,10 +47,13 @@
                                     <label class="m-0" for="contact">Username</label>
                                     <input class="form-control w-100 p-10" id="contact" type="text" placeholder="Enter Username" name="username" required>
                                 </div>
+                                
                                 <div class="form-group">
                                     <label class="m-0" for="password">Password</label>
                                     <input class="form-control w-100 p-10" id="password" type="password" placeholder="Enter Password" name="Password_1" required>
                                 </div>
+                                
+                            
                                 <div class="form-group">
                                     <label class="m-0" for="password">Re-type Password</label>
                                     <input class="form-control w-100 p-10" id="password" type="password" placeholder="Confirm Password" name="Password_2" required>
@@ -59,9 +62,9 @@
                                     <label class="m-0" for="mail">Email</label>
                                     <input class="form-control w-100 p-10" id="mail" type="email" placeholder="example@email.com" name="Email" required>
                                 </div>
-                                <label>
+                               <!-- <label>
                                     <input type="checkbox" checked="checked" name="remember"> Remember me
-                                </label>
+                                </label>-->
                                 <div class="col-md-12 text-center">
                                     <button class="btn btn-primary" type="submit" name="reg_user">Submit</button>
                                     <p>
@@ -81,7 +84,7 @@
     <!--angular.min.js-->
     <script src="angularjs/angular.min.js"></script>
     <script src="angularjs/angular-ui-router.min.js"></script>
-    <script src="angularjs/Helpdesk.js"></script>
+    <script src="angularjs/helpdesk.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
