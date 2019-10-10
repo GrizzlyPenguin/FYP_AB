@@ -113,7 +113,7 @@ app.controller("putCtrl", function ($scope, $http) {
                 });
     };
     
-    $scope.postLog = function (Diagnosis, findings, others, cause, UserID, ticketID) {
+    $scope.postLog = function (Diagnosis, findings, others, cause, UserID, ticketID, ticketStat) {
         // Prepare the data        
         $scope.msg=alert("Thank you! You have submitted the Log!");
         $scope.refresh=location.reload();
@@ -124,7 +124,8 @@ app.controller("putCtrl", function ($scope, $http) {
                 pid: UserID,
                 others: others,
                 cause: cause,
-                ticketID: ticketID
+                ticketID: ticketID,
+                ticketStat: ticketStat
             }),
             config = {
                 headers: {

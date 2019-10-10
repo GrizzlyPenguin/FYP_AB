@@ -212,12 +212,21 @@
                                         <label id="lasteditname" style="font-style: normal; font-weight: normal">date_name_id</label>
 -->
                                     </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="status">Status</label>
+                                        <select class="browser-default custom-select" id="status" data-ng-model="TicketStatus" data-ng-init="TicketStatus='Pending'">
+                                            <option value="Open">Open</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="Solved">Solved</option>
+                                        </select>
+                                    </div>
                                 </form>
                             </div>
 
                             <!-- Modal footer -->
                             <div class="modal-footer">
-                                <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postLog(diagnosis, findings, others, cause, EmpID, tno)" data-dismiss="modal">Submit</button>
+                                <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postLog(diagnosis, findings, others, cause, EmpID, tno, TicketStatus)" data-dismiss="modal">Submit</button>
                                 <button type="reset" class="btn btn-default">Reset</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
