@@ -40,7 +40,7 @@
                                 <td>{{ticket.desc}}</td>
                                 <td>{{ticket.Name}}</td>
                                 <td>{{ticket.date}}</td>
-                                <td>{{ticket.status}}</td>
+                                <td class="{{ticket.status}}"><b>{{ticket.status}}</b></td>
                             </tr>
                         </tbody>
                     </div>
