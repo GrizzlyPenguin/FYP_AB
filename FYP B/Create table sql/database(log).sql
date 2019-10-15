@@ -1,5 +1,4 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET GLOBAL time_zone = '+8:00';
 
 CREATE TABLE IF NOT EXISTS `TimeLog` (
 `LogID` int(3) NOT NULL,
@@ -13,3 +12,6 @@ CREATE TABLE IF NOT EXISTS `TimeLog` (
 
 ALTER TABLE `TimeLog`
  ADD PRIMARY KEY (`LogID`);
+
+
+

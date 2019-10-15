@@ -1,6 +1,4 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET GLOBAL time_zone = '+8:00';
-
 
 CREATE TABLE IF NOT EXISTS `TICKET` (
 `TicketNo` int(3) NOT NULL,
