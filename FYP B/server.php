@@ -9,7 +9,7 @@
 	$_SESSION['success'] = "";
 
 	// connect to database
-	$db = mysqli_connect('localhost', 'root', '', 'smdigita_helpdesk');
+	$db = mysqli_connect('localhost', 'root', '', 'helpdesk');
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
