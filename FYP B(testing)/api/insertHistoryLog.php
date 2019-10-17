@@ -1,7 +1,8 @@
 <?php
     include('dbconnect.php');
-    if(isset($_POST['Diagnosis']) || isset($_POST['findings']) || isset($_POST['others']) || isset($_POST['cause']) || isset($_POST['pid']) || isset($_POST['ticketID']) || isset($_POST['ticketStat']))
+    if(isset($_POST['Description']) || isset($_POST['Diagnosis']) || isset($_POST['findings']) || isset($_POST['others']) || isset($_POST['cause']) || isset($_POST['pid']) || isset($_POST['ticketID']) || isset($_POST['ticketStat']))
     {
+        $Description = $_POST['Description'];
         $Diagnosis = $_POST['Diagnosis'];
         $findings = $_POST['findings'];
         $others = $_POST['others'];
@@ -10,14 +11,14 @@
         $ticketID = $_POST['ticketID'];        
         $ticketStat = $_POST['ticketStat'];
         
-        $sql = "INSERT INTO HISTORYLOG(Diagnosis, findings, others, cause, EmpID, ticketNo) VALUES
-        ('". $Diagnosis ."','" . $findings . "','".$others."','".$cause."','".$pid."' , '".$ticketID."') 
-        ON DUPLICATE KEY UPDATE Diagnosis = '".$Diagnosis."', findings = '".$findings."', others = '".$others."', cause = '".$cause."';";
+        $sql = "INSERT INTO HISTORYLOG(Descriptions, Diagnosis, findings, others, cause, EmpID, ticketNo) VALUES
+        ('". $Description . "','". $Diagnosis ."','" . $findings . "','".$others."','".$cause."','".$pid."' , '".$ticketID."') 
+        ON DUPLICATE KEY UPDATE Descriptions = '". $Diagnosis ."',Diagnosis = '".$Diagnosis."', findings = '".$findings."', others = '".$others."', cause = '".$cause."';";
         
         $sql2 = "UPDATE TICKET SET Status = '". $ticketStat . "'WHERE ticketNo = '".$ticketID."';";
         
         if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
+            echo "New log created successfully";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }

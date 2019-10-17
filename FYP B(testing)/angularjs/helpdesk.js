@@ -56,7 +56,7 @@ app.controller("getCtrl", function ($scope, $http) {
     $scope.init = function (obj) {
         $scope.tno = obj.ticketNo;
         $scope.title = obj.title;
-        $scope.desc = obj.desc;
+        $scope.cust_desc = obj.desc;
         $scope.warran = obj.warranty;
         $scope.domainName = obj.domain;
         $scope.name = obj.Name;
@@ -113,12 +113,13 @@ app.controller("putCtrl", function ($scope, $http) {
                 });
     };
     
-    $scope.postLog = function (Diagnosis, findings, others, cause, UserID, ticketID, ticketStat) {
+    $scope.postLog = function (Description, Diagnosis, findings, others, cause, UserID, ticketID, ticketStat) {
         // Prepare the data        
         $scope.msg=alert("Thank you! You have submitted the Log!");
         $scope.refresh=location.reload();
         var url = "api/insertHistoryLog.php",
             data = $.param({
+                Description: Description,
                 Diagnosis: Diagnosis,
                 findings: findings,
                 pid: UserID,
@@ -219,7 +220,6 @@ app.controller("postCtrl", function ($scope, $http) {
       // define methods
     $scope.searchName = function (pid) {
         // Prepare the data        
-        console.log("searchName");
         var url = "api/getCustName.php",
             data = $.param({
                 pid: pid
@@ -249,8 +249,33 @@ app.controller("postCtrl", function ($scope, $http) {
     };
     
     $scope.getLog = function (pid, tNo) {
-        // Prepare the data        
-        console.log(tNo);
+        // Prepare the data       
+        var url0 = "api/getDescription.php",
+            data = $.param({
+                UserID: pid,
+                tNo: tNo
+            }),
+            config = {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+        
+        $http.post(url0, data, config)
+            .then(
+                function (response) {
+                    if (response.data) {
+                        $scope.description = response.data;
+                    }
+                },
+                function (response) {
+                    console.log("Service not Exists");
+                    $scope.statusval = response.status;
+                    $scope.statustext = response.statusText;
+                    $scope.headers = response.headers;
+                    console.log(response.data);
+                });
+        
         var url = "api/getDiagnosis.php",
             data = $.param({
                 UserID: pid,
@@ -267,7 +292,6 @@ app.controller("postCtrl", function ($scope, $http) {
                 function (response) {
                     if (response.data) {
                         $scope.diagnosis = response.data;
-                        console.log(response.data);
                     }
                 },
                 function (response) {

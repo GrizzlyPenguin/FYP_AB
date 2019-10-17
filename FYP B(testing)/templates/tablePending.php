@@ -81,7 +81,6 @@
                                             <div class="col-md-6 col-sm-6" style=" white-space: nowrap">
                                                 <label for="warranty" class="font-weight-bold">Warranty:</label>
                                                 <img src="img/q_mark.png" title="Is your work or system is still in warranty?" style="max-width: 15px; max-height: 15px;">
-                                                <br>
                                                 <input type="radio" value="yes" data-ng-hide="warran=='yes'" />
                                                 <input type="radio" value="yes" data-ng-show="warran=='yes'" checked />
                                                 <label>Yes</label>
@@ -89,57 +88,69 @@
                                                 <input type="radio" value="no" data-ng-hide="warran=='no'" />
                                                 <input type="radio" value="no" data-ng-show="warran=='no'" checked />
                                                 <label>No</label>
-                                                </div>
                                             </div>
                                         </div>
-                                        <br />
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
-                                                <label for="namelbl" class="font-weight-bold">Client Name:</label><br/>
-                                                <input type="text" readonly class="form-control" value="{{CustName}}">
+                                                <label for="namelbl" class="font-weight-bold">Client Name:</label>
+                                                {{CustName}}
+                                                <!--<input type="text" readonly class="form-control w-100" value="{{CustName}}">-->
                                             </div>
                                             <div class="col-md-6 col-sm-12">
                                                 <label for="domainlbl" class="font-weight-bold">Domain Name:</label>
-                                                <input type="text" class="form-control w-100" value="{{domainName}}" readonly />
+                                                {{domainName}}
+                                                <!--<input type="text" class="form-control w-100" value="{{domainName}}" readonly />-->
                                             </div>
                                         </div>
-                                        <br />
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="source" class="font-weight-bold">Source Code: </label>
-                                                <br />
-                                                <input type="text" class="form-control w-100" placeholder="Online cloud" />
-                                                <p></p>
-                                                <input type="text" class="form-control w-100" placeholder="Offline Source" />
+                                            <div class="col-md-12 col-sm-12">
+                                                <label class="font-weight-bold">Description:</label>
+                                                {{cust_desc}}
+                                                <!--<textarea value="{{cust_desc}}" data-ng-model="diagnosis" class="form-control w-100" rows="3" readonly></textarea>-->
                                             </div>
-                                            <div class="col-md-6">
-                                                <label class="font-weight-bold">Job Type: </label>
-                                                <select class="browser-default custom-select">
-                                                    <option value="log">Problem Log</option>
-                                                    <option value="query">Query</option>
-                                                </select>
-                                            </div>
-
                                         </div>
-                                    
+
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="source" class="font-weight-bold">Source Code: </label>
+                                            <br />
+                                            <input type="text" class="form-control w-100" placeholder="Online cloud" />
+                                            <p></p>
+                                            <input type="text" class="form-control w-100" placeholder="Offline Source" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="font-weight-bold">Job Type: </label>
+                                            <select class="browser-default custom-select">
+                                                <option value="log">Problem Log</option>
+                                                <option value="query">Query</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
                                     <hr>
                                     <!--lvl a-->
                                     <div data-ng-model="historyLog">
                                         <p class="font-weight-bold">Level A:</p>
 
+                                        <label class="font-weight-bold">Description:</label> <br>
+                                        <textarea value="{{historyLog.description}}" data-ng-model="description" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write description here..."></textarea>
+                                        <br>
                                         <label class="font-weight-bold">Diagnosis:</label> <br>
-                                        <textarea value="{{historyLog.diagnosis}}" data-ng-model="diagnosis" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+                                        <textarea value="{{historyLog.diagnosis}}" data-ng-model="diagnosis" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write diagnosis here..."></textarea>
                                         <br>
                                         <label class="font-weight-bold"> Findings:</label> <br>
-                                        <textarea value="{{historyLog.findings}}" data-ng-model="findings" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+                                        <textarea value="{{historyLog.findings}}" data-ng-model="findings" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write findings here..."></textarea>
                                         <br>
                                         <label class="font-weight-bold">Others:</label> <br>
-                                        <textarea value="{{historyLog.others}}" data-ng-model="others" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+                                        <textarea value="{{historyLog.others}}" data-ng-model="others" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Other details..."></textarea>
                                         <br>
                                         <label class="font-weight-bold">Nature of Cause:</label> <br>
                                         <textarea value="{{historyLog.cause}}" data-ng-model="cause" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
                                         <br>
-<!--
+                                        <!--
                                         <label class="font-weight-bold">Log:</label> <br>
                                         <table border="1px">
                                             <tr>
@@ -169,7 +180,7 @@
                                     </div>
                                     <!--lvl b-->
                                     <div id="lvlb_section" data-ng-hide="role">
-                                    <hr>
+                                        <hr>
                                         <p>Level B:</p>
 
                                         <label class="font-weight-bold">Diagnosis:</label> <br>
@@ -185,7 +196,7 @@
                                         <label class="font-weight-bold">Nature of Cause:</label> <br>
                                         <textarea class="form-control z-depth-1" data-ng-model="cause1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
                                         <br>
-<!--
+                                        <!--
                                         <label class="font-weight-bold">Log:</label> <br>
                                         <table>
                                             <tr>
@@ -212,7 +223,7 @@
                                         <label id="lasteditname" style="font-style: normal; font-weight: normal">date_name_id</label>
 -->
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label for="status">Status</label>
                                         <select class="browser-default custom-select" id="status" data-ng-model="TicketStatus" data-ng-init="TicketStatus='Pending'">
@@ -226,7 +237,7 @@
 
                             <!-- Modal footer -->
                             <div class="modal-footer">
-                                <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postLog(diagnosis, findings, others, cause, EmpID, tno, TicketStatus)" data-dismiss="modal">Submit</button>
+                                <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postLog(description, diagnosis, findings, others, cause, EmpID, tno, TicketStatus)" data-dismiss="modal">Submit</button>
                                 <button type="reset" class="btn btn-default">Reset</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
@@ -234,7 +245,7 @@
                     </div>
                 </div>
 
-               
+
                 <div class="modal fade" id="Modal">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
