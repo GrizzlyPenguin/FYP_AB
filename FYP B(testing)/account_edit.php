@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 include('server.php');
 	
 ?>
@@ -23,9 +23,9 @@ include('server.php');
 
 
     <div class="container top">
-        <h2>Account Management</h2>
+        <h2 style="text-align:center;">Account Management</h2>
 
-        <div class="card">
+        <div class="card" style="align-context:cente;">
 
             <div data-ng-controller="testController">
                 <div class="well">
@@ -40,7 +40,7 @@ include('server.php');
                 <br />
                 <label id="email"><strong>Address:</strong></label><br />
                 <input type="text" value="<?php echo $_SESSION['Address'] ?>" class="input-large" readonly /><br /><br />
-                <label id="ContactN">Contact Number:</label><br />
+                <label id="ContactN"><strong>Contact Number:</strong></label><br />
                 <input type="text" id="telephone" value="<?php echo $_SESSION['ContactNumber'] ?>" readonly /><br />
                 <label><strong>E-mail:</strong></label><br />
                 <input type="text" id="email" value="<?php echo $_SESSION['Email'] ?>" /><br />

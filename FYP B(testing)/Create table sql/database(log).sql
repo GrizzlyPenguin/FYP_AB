@@ -1,5 +1,6 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 
+
 CREATE TABLE IF NOT EXISTS `TimeLog` (
 `LogID` int(3) NOT NULL,
   `BudgetTime` time NOT NULL,
@@ -12,6 +13,3 @@ CREATE TABLE IF NOT EXISTS `TimeLog` (
 
 ALTER TABLE `TimeLog`
  ADD PRIMARY KEY (`LogID`);
-
-
-

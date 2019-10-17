@@ -1,6 +1,7 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 
 
+
 CREATE TABLE IF NOT EXISTS `REGISTRATION` (
 `CustID` int(3) NOT NULL,
   `username` varchar(20) NOT NULL,

@@ -1,0 +1,148 @@
+[17-Oct-2019 14:20:58 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:21:04 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:21:09 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:21:30 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:21:39 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:21:52 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:21:58 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:21:59 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:22:00 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:22:38 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:22:42 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:22:46 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:22:47 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:22:56 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:23:06 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:23:08 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:23:27 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:23:27 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:23:30 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:23:50 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:24:34 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:24:35 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:24:45 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:26:06 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:28:03 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:28:46 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:28:50 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:29:05 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:30:03 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:36:36 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:56:28 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 14:56:54 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 15:08:58 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 7
+[17-Oct-2019 15:22:27 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 6
+[17-Oct-2019 15:22:34 Asia/Kuala_Lumpur] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 6
+[17-Oct-2019 16:59:48 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 24
+[17-Oct-2019 16:59:59 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 24
+[17-Oct-2019 17:00:00 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 24
+[17-Oct-2019 17:00:00 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 24
+[17-Oct-2019 17:00:27 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 24
+[17-Oct-2019 17:00:35 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 24
+[17-Oct-2019 17:00:35 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 24
+[17-Oct-2019 17:00:36 Asia/Kuala_Lumpur] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/smdigitalcom/public_html/Helpdesk/api/getAllPersons.php on line 24
