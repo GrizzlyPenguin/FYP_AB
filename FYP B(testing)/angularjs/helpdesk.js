@@ -62,6 +62,36 @@ app.controller("getCtrl", function ($scope, $http) {
         $scope.name = obj.Name;
     };
     
+    
+    $scope.initEmp = function () {
+        // Prepare the data        
+        var url = "api/getAllEmp.php",
+            config = {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            };
+        
+        $http.get(url, config)
+            .then(
+                function (response) {
+                    // depends on the data value
+                    // there may be instances of put failure
+                    if (response.data) {
+                        $scope.emps = response.data;
+                        console.log(response.data);
+                        
+                    }
+                },
+                function (response) {
+                    console.log("Service not Exists");
+                    $scope.statusval = response.status;
+                    $scope.statustext = response.statusText;
+                    $scope.headers = response.headers();
+                });
+        
+        
+    };    
 });
 
 
@@ -113,7 +143,7 @@ app.controller("putCtrl", function ($scope, $http) {
                 });
     };
     
-    $scope.postLog = function (Description, Diagnosis, findings, others, cause, UserID, ticketID, ticketStat) {
+    $scope.postLog = function (Description, Diagnosis, findings, others, cause, UserID, ticketID, ticketStat, transfer) {
         // Prepare the data        
         $scope.msg=alert("Thank you! You have submitted the Log!");
         $scope.refresh=location.reload();
@@ -126,7 +156,8 @@ app.controller("putCtrl", function ($scope, $http) {
                 others: others,
                 cause: cause,
                 ticketID: ticketID,
-                ticketStat: ticketStat
+                ticketStat: ticketStat, 
+                transfer: transfer
             }),
             config = {
                 headers: {

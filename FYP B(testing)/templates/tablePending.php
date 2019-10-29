@@ -41,7 +41,7 @@
                             <span class="sr-only" data-ng-init="empInit('<?php echo $_SESSION['EmpID']; ?>')"></span>
                             <span class="sr-only" data-ng-init="custInit('<?php echo $_SESSION['CustID']; ?>')"></span>
                             <tbody>
-                                <tr class="text-center" data-ng-repeat="ticket in tickets |orderBy:column:reverse|filter:searchText" data-ng-show="((ticket.status=='Pending' && ticket.StaffID==EmpID) ||ticket.pid==CustID && (ticket.status=='Pending' || ticket.status=='Solved' || ticket.status=='Open'))" data-ng-click="init(ticket)">
+                                <tr class="text-center" data-ng-repeat="ticket in tickets |orderBy:column:reverse|filter:searchText" data-ng-show="((ticket.status=='Pending' && ticket.StaffID==EmpID) ||ticket.pid==CustID && (ticket.status=='Pending' || ticket.status=='Solved' || ticket.status=='Open'))" data-ng-click="init(ticket); initEmp()">
                                     <td>{{ticket.ticketNo}}</td>
                                     <td>{{ticket.title}}</td>
                                     <td>{{ticket.desc}}</td>
@@ -74,11 +74,11 @@
                                     <!--customer section-->
                                     <div id="customer_section">
                                         <div class="row">
-                                            <div class="col-md-6 col-sm-6">
+                                            <div class="col-md-6 col-sm-12">
                                                 <label for="ticNo" class="font-weight-bold">Ticket No: </label>
                                                 <label id="ticNum">{{tno}}</label>
                                             </div>
-                                            <div class="col-md-6 col-sm-6" style=" white-space: nowrap">
+                                            <div class="col-md-6 col-sm-12" style=" white-space: nowrap">
                                                 <label for="warranty" class="font-weight-bold">Warranty:</label>
                                                 <img src="img/q_mark.png" title="Is your work or system is still in warranty?" style="max-width: 15px; max-height: 15px;">
                                                 <input type="radio" value="yes" data-ng-hide="warran=='yes'" />
@@ -224,6 +224,13 @@
 -->
                                     </div>
 
+                                   <div class="form-group">
+                                        <label for="transfer">Transfer task to: </label>
+                                        <select class="browser-default custom-select" id="status" data-ng-model="TicketTransfer">
+                                            <option class = "text-capitalize" data-ng-repeat="emp in emps" value={{emp.id}} >{{emp.name}}</option>
+                                        </select>
+                                    </div>
+                                   
                                     <div class="form-group">
                                         <label for="status">Status</label>
                                         <select class="browser-default custom-select" id="status" data-ng-model="TicketStatus" data-ng-init="TicketStatus='Pending'">
@@ -237,7 +244,7 @@
 
                             <!-- Modal footer -->
                             <div class="modal-footer">
-                                <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postLog(description, diagnosis, findings, others, cause, EmpID, tno, TicketStatus)" data-dismiss="modal">Submit</button>
+                                <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postLog(description, diagnosis, findings, others, cause, EmpID, tno, TicketStatus, TicketTransfer)" data-dismiss="modal">Submit</button>
                                 <button type="reset" class="btn btn-default">Reset</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>

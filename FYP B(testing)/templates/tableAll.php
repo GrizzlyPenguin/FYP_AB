@@ -82,36 +82,57 @@
                              <!--customer section-->
                              <div id="customer_section">
                                  <div class="row">
-                                     <div class="col-md-6 col-sm-6">
+                                     <div class="col-md-6 col-sm-12">
                                          <label for="ticNo" class="font-weight-bold">Ticket No: </label>
                                          <label id="ticNum">{{tno}}</label>
                                      </div>
-                                     <div class="col-md-6 col-sm-6" style=" white-space: nowrap">
+                                     <div class="col-md-6 col-sm-12">
                                          <label for="warranty" class="font-weight-bold">Warranty:</label>
-                                         <img src="img/q_mark.png" title="Is your work or system is still in warranty?" style="max-width: 15px; max-height: 15px;">
-                                         <br>
-                                         <input type="radio" value="yes" data-ng-hide="warran=='yes'" />
-                                         <input type="radio" value="yes" data-ng-show="warran=='yes'" checked />
-                                         <label>Yes</label>
-                                         <span class="pl-3"></span>
-                                         <input type="radio" value="no" data-ng-hide="warran=='no'" />
-                                         <input type="radio" value="no" data-ng-show="warran=='no'" checked />
-                                         <label>No</label>
+<!--                                         <img src="img/q_mark.png" title="Is your work or system is still in warranty?" style="max-width: 15px; max-height: 15px;">-->
+                                         <span class="text-capitalize">{{warran}}</span>
                                      </div>
                                  </div>
+                                 <div class="row">
+                                            <div class="col-md-6 col-sm-12">
+                                                <label for="namelbl" class="font-weight-bold">Client Name:</label>
+                                                {{CustName}}
+                                                <!--<input type="text" readonly class="form-control w-100" value="{{CustName}}">-->
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <label for="domainlbl" class="font-weight-bold">Domain Name:</label>
+                                                {{domainName}}
+                                                <!--<input type="text" class="form-control w-100" value="{{domainName}}" readonly />-->
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
+                                                <label class="font-weight-bold">Description:</label>
+                                                {{cust_desc}}
+                                                <!--<textarea value="{{cust_desc}}" data-ng-model="diagnosis" class="form-control w-100" rows="3" readonly></textarea>-->
+                                            </div>
+                                        </div>
                              </div>
                              <br />
-                             <div class="row">
-                                 <div class="col-md-6 col-sm-12">
-                                     <label for="namelbl" class="font-weight-bold">Client Name:</label><br />
-                                     <input type="text" readonly class="form-control" value="{{CustName}}">
-                                 </div>
-                                 <div class="col-md-6 col-sm-12">
-                                     <label for="domainlbl" class="font-weight-bold">Domain Name:</label>
-                                     <input type="text" class="form-control w-100" value="{{domainName}}" readonly />
-                                 </div>
-                             </div>
+                             <hr>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="source" class="font-weight-bold">Source Code: </label>
+                                        <br />
+                                        <input type="text" class="form-control w-100" placeholder="Online cloud" />
+                                        <p></p>
+                                        <input type="text" class="form-control w-100" placeholder="Offline Source" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="font-weight-bold">Job Type: </label>
+                                        <select class="browser-default custom-select">
+                                            <option value="log">Problem Log</option>
+                                            <option value="query">Query</option>
+                                        </select>
+                                    </div>
 
+                                </div>
+                             <br />
+                             <hr>
                          </form>
                      </div>
 
