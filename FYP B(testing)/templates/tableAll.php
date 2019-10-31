@@ -47,14 +47,14 @@
                                      </tr>
                                  </thead>
                                  <tbody>
-                                     <tr class="text-center" data-ng-repeat="ticket in tickets|orderBy:column:reverse|filter:searchword">
+                                     <tr data-ng-repeat="ticket in tickets|orderBy:column:reverse|filter:searchword">
                                          <td>{{ticket.ticketNo|number}}</td>
                                          <td>{{ticket.title}}</td>
                                          <td>{{ticket.desc}}</td>
                                          <td>{{ticket.Name}}</td>
                                          <td>{{ticket.date}}</td>
                                          <td class="text-center"><button data-toggle="modal" data-target="#viewModal" class="btn btn-primary" data-ng-click="init(ticket); searchName(ticket.pid)">View</button></td>
-                                         <td class="{{ticket.status}}"><b>{{ticket.status}}</b></td>
+                                         <td class="{{ticket.status}} text-center"><b>{{ticket.status}}</b></td>
                                      </tr>
                                  </tbody>
                              </table>
@@ -88,51 +88,82 @@
                                      </div>
                                      <div class="col-md-6 col-sm-12">
                                          <label for="warranty" class="font-weight-bold">Warranty:</label>
-<!--                                         <img src="img/q_mark.png" title="Is your work or system is still in warranty?" style="max-width: 15px; max-height: 15px;">-->
+                                         <!--                                         <img src="img/q_mark.png" title="Is your work or system is still in warranty?" style="max-width: 15px; max-height: 15px;">-->
                                          <span class="text-capitalize">{{warran}}</span>
                                      </div>
                                  </div>
                                  <div class="row">
-                                            <div class="col-md-6 col-sm-12">
-                                                <label for="namelbl" class="font-weight-bold">Client Name:</label>
-                                                {{CustName}}
-                                                <!--<input type="text" readonly class="form-control w-100" value="{{CustName}}">-->
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <label for="domainlbl" class="font-weight-bold">Domain Name:</label>
-                                                {{domainName}}
-                                                <!--<input type="text" class="form-control w-100" value="{{domainName}}" readonly />-->
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12 col-sm-12">
-                                                <label class="font-weight-bold">Description:</label>
-                                                {{cust_desc}}
-                                                <!--<textarea value="{{cust_desc}}" data-ng-model="diagnosis" class="form-control w-100" rows="3" readonly></textarea>-->
-                                            </div>
-                                        </div>
+                                     <div class="col-md-6 col-sm-12">
+                                         <label for="namelbl" class="font-weight-bold">Client Name:</label>
+                                         {{CustName}}
+                                         <!--<input type="text" readonly class="form-control w-100" value="{{CustName}}">-->
+                                     </div>
+                                     <div class="col-md-6 col-sm-12">
+                                         <label for="domainlbl" class="font-weight-bold">Domain Name:</label>
+                                         {{domainName}}
+                                         <!--<input type="text" class="form-control w-100" value="{{domainName}}" readonly />-->
+                                     </div>
+                                 </div>
+                                 <div class="row">
+                                     <div class="col-md-12 col-sm-12">
+                                         <label class="font-weight-bold">Description:</label>
+                                         {{cust_desc}}
+                                         <!--<textarea value="{{cust_desc}}" data-ng-model="diagnosis" class="form-control w-100" rows="3" readonly></textarea>-->
+                                     </div>
+                                 </div>
                              </div>
                              <br />
                              <hr>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="source" class="font-weight-bold">Source Code: </label>
-                                        <br />
-                                        <input type="text" class="form-control w-100" placeholder="Online cloud" />
-                                        <p></p>
-                                        <input type="text" class="form-control w-100" placeholder="Offline Source" />
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="font-weight-bold">Job Type: </label>
-                                        <select class="browser-default custom-select">
-                                            <option value="log">Problem Log</option>
-                                            <option value="query">Query</option>
-                                        </select>
-                                    </div>
+                             <div class="row">
+                                 <div class="col-md-6">
+                                     <label for="source" class="font-weight-bold">Source Code: </label>
+                                     <br />
+                                     <input type="text" class="form-control w-100" placeholder="Online cloud" />
+                                     <p></p>
+                                     <input type="text" class="form-control w-100" placeholder="Offline Source" />
+                                 </div>
+                                 <div class="col-md-6">
+                                     <label class="font-weight-bold">Job Type: </label>
+                                     <select class="browser-default custom-select">
+                                         <option value="log">Problem Log</option>
+                                         <option value="query">Query</option>
+                                     </select>
+                                 </div>
 
-                                </div>
+                             </div>
                              <br />
                              <hr>
+                             <div class="row">
+                                 <div class="col-md-12">
+                                     <label class="font-weight-bold">Additional Description: </label>
+                                     {{addDesc}}
+                                     <br />
+                                 </div>
+                             </div>
+
+                             <hr>
+                             <!--lvl a-->
+                             <label class="font-weight-bold">History: </label> <br>
+                             <table class="table table-sm table-striped table-bordered table-hover">
+                                 <thead>
+                                     <tr>
+                                         <th>Diagnosis</th>
+                                         <th>Findings</th>
+                                         <th>Others</th>
+                                         <th>Cause</th>
+                                         <th>Written by</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <tr data-ng-repeat="log in logs">
+                                         <td>{{log.diagnosis}}</td>
+                                         <td>{{log.findings}}</td>
+                                         <td>{{log.others}}</td>
+                                         <td>{{log.cause}}</td>
+                                         <td>{{log.writtenBy}}</td>
+                                     </tr>
+                                 </tbody>
+                             </table>
                          </form>
                      </div>
 
