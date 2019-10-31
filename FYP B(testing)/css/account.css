@@ -43,3 +43,10 @@ a.accedit {
 button:hover, a:hover {
   opacity: 0.7;
 }
+
+.img-circle{
+ width: 100%;
+  max-width: 300px;
+  min-width: 100px;
+  height: auto;
+}
