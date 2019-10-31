@@ -12,9 +12,20 @@
         $ticketStat = $_POST['ticketStat'];
         $transfer = $_POST['transfer'];
         
-        $sql = "INSERT INTO HISTORYLOG(Diagnosis, findings, others, cause, EmpID, ticketNo, WrittenBy) VALUES
-        ('". $Diagnosis ."','" . $findings . "','".$others."','".$cause."','".$pid."' , '".$ticketID."', '".$pid."') 
-        ON DUPLICATE KEY UPDATE Diagnosis = '".$Diagnosis."', findings = '".$findings."', others = '".$others."', cause = '".$cause."', WrittenBy = '".$pid."';";
+//        $sql = "INSERT INTO HISTORYLOG(Diagnosis, findings, others, cause, EmpID, ticketNo, WrittenBy) VALUES
+//        ('". $Diagnosis ."','" . $findings . "','".$others."','".$cause."','".$pid."' , '".$ticketID."', '".$pid."') 
+//        ON DUPLICATE KEY UPDATE Diagnosis = '".$Diagnosis."', findings = '".$findings."', others = '".$others."', cause = '".$cause."', WrittenBy = '".$pid."';";
+//        
+        if (!empty($Diagnosis) || !empty($findings) || !empty($others) || !empty($cause))   {
+            $sql = "INSERT INTO HISTORYLOG(Diagnosis, findings, others, cause, EmpID, ticketNo, WrittenBy) VALUES
+            ('". $Diagnosis ."','" . $findings . "','".$others."','".$cause."','".$pid."','".$ticketID."','".$pid."')";
+            if ($conn->query($sql) === TRUE) {
+                echo "New log created successfully";                
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;  
+            }
+//        ON DUPLICATE KEY UPDATE Diagnosis = '".$Diagnosis."', findings = '".$findings."', others = '".$others."', cause = '".$cause."', WrittenBy = '".$pid."';";
+        }
         
         if (!empty($_POST['addDesc'])){
             $sql4 = "UPDATE TICKET SET AdditionalTicketDesc = '". $addDesc . "'WHERE ticketNo = '".$ticketID."';";
@@ -40,16 +51,7 @@
                 echo "Error: " . $sql3 . "<br>" . $conn->error;
             }
         }
-            
-        if ($conn->query($sql) === TRUE) {
-            echo "New log created successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-            
-        
-            
-            
+                
     }
 	$conn->close();
 ?>

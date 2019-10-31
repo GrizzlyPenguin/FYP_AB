@@ -216,6 +216,7 @@
                                     <div class="form-group">
                                         <label for="transfer">Transfer task to: </label>
                                         <select class="browser-default custom-select" id="status" data-ng-model="TicketTransfer">
+                                            <option></option>
                                             <option class="text-capitalize" data-ng-repeat="emp in emps | filter: {id: '!'+EmpID}" value={{emp.id}}>{{emp.name}}</option>
                                         </select>
                                     </div>
