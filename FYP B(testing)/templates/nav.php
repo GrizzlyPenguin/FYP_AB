@@ -33,15 +33,24 @@
                     <a class="nav-link" data-ng-show="role=='admin'" href="reg_employee.php">User Management</a>
                 </li>
 
-                <li class="nav-item" data-ng-controller="postCtrl">
+<!--                <li class="nav-item" data-ng-controller="postCtrl" sytle="margin-left:50px">
                     <span class="sr-only" data-ng-init="roleInit('<?php echo $_SESSION['Role']; ?>')"></span>
                     <a class="nav-link" data-ng-show="role=='admin'" href="report.php">Report</a>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="account_edit.php"><?php echo ucfirst($_SESSION['username']); ?></a>
+-->                                
+                 <li class="nav-item" data-ng-controller="postCtrl" >
+                    <span class="sr-only" data-ng-init="roleInit('<?php echo $_SESSION['Role']; ?>')"></span>
+                    <p class="nav-link" data-ng-show="role=='admin'" href="reg_employee.php">   </p>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="account_edit.php"><strong><?php echo ucfirst($_SESSION['username']); ?></strong></a>
+                </li>
+                
+                <li class="nav-item">
+                                
+                </li>
+                
                 <li>
                     <button class="btn btn-danger btn-xs" title="Log Out" onclick=location.href="index.php?logout='1'">LOG OUT</button>
                 </li>
