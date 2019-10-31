@@ -24,13 +24,12 @@
     <div data-ng-include="'templates/nav.php'"></div>
 
     <div class="container top">
-        <div class="row">
+        <div class="row" style="margin-top:50px;">
             <div class="col-md-3">
                 <div data-ng-include="'templates/sidebar.php'"></div>
             </div>
             <!--table-->
             <div data-ng-view class="col-md-9 pl-md-0"></div>
-            
         </div>
     </div>
     
@@ -62,6 +61,19 @@
                                 </select>
                             </div>
 -->
+                           <!-- <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control w-100" data-ng-model="TicketTitle" id="title">
+                            </div>
+                            <div class="form-group">
+                                <label for="Textarea1">Description</label>
+                                <textarea class="form-control" id="Textarea1" rows="3" data-ng-model="TicketDesc"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="FormControlFile1">Attachments</label>
+                                <input type="file" class="form-control-file" id="FormControlFile1">
+                            </div>-->
+                            
                             <div class="form-group">
                                 <label for="title">Title</label>
                                 <input type="text" class="form-control w-100" data-ng-model="TicketTitle" id="title">
@@ -69,6 +81,18 @@
                             <div class="form-group">
                                 <label for="Textarea1">Description</label>
                                 <textarea class="form-control" id="Textarea1" rows="3" data-ng-model="TicketDesc"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="warranty">Warranty</label> <br/>
+                                    <label>
+                                    <input type="radio" ng-model="warranty" value="yes">Yes
+                                    <span style="margin-right: 25px"></span>
+                                    <input type="radio" ng-model="warranty" value="no">No
+                                </label><br/>
+                            </div>
+                            <div class="form-group">
+                                <label for="domain">Domain name</label>
+                                <input type="text" class="form-control w-100" data-ng-model="domain" id="domain">
                             </div>
                             <div class="form-group">
                                 <label for="FormControlFile1">Attachments</label>
@@ -92,6 +116,7 @@
     <script src="angularjs/angular.min.js"></script>
     <script src="angularjs/angular-route.min.js"></script>
     <script src="angularjs/helpdesk.js"></script>
+    <script src="angularjs/pagination.js"></script>
 
     <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
