@@ -4,7 +4,7 @@
 <div data-ng-controller="putCtrl">
 
     <div class="table-tasks" data-ng-controller="getCtrl">
-        <div ng-controller="sort">
+        <div ng-controller="sort" style="margin-top:50px; margin-left:20px">
             <div data-ng-controller="postCtrl">
                 <span class="sr-only" data-ng-init="roleInit('<?php echo $_SESSION['Role']; ?>')"></span>
                 <div class="tableTitle">

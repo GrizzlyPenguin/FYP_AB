@@ -5,7 +5,7 @@
                  <div ng-controller="sort">
                      <div ng-controller="search">
                          <div class="tableTitle">
-                             <div class="row">
+                             <div class="row" style="margin-top:50px;">
                                  <h3>All tasks</h3>
                                  <div class="col p-0">
                                      <button data-toggle="modal" data-target="#myModal" class="btn btn-primary float-right">+ Ticket</button>
@@ -58,6 +58,9 @@
                                      </tr>
                                  </tbody>
                              </table>
+							<div class="dataTables_paginate paging_simple_numbers">
+								<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" items-per-page="pageSize" max-size="3" boundary-links="true" rotate="false" ></pagination>
+							</div>
                          </div>
                      </div>
                  </div>
