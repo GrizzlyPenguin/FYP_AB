@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS `HISTORYLOG` (
     `LogID` int(3) NOT NULL,
     `TicketNo` int(3) NOT NULL REFERENCES TICKET(TicketNo),
     `EmpID` int(4) NOT NULL REFERENCES EMPLOYEE(EmpID),
+    `Descriptions` varchar(100),
     `Diagnosis` varchar(100),
     `Findings` varchar(100),
     `Others` varchar(100),

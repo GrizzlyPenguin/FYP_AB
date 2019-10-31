@@ -117,11 +117,18 @@
                 $_SESSION['EmpID'] = $row2['EmpID']; $_SESSION['ContactNumber'] = $row['ContactNumber'];
                 $_SESSION['Role'] = $row2['Role'];
 			
-            if (mysqli_num_rows($results) == 1 || mysqli_num_rows($results2) == 1 ) {
+              if (mysqli_num_rows($results) == 1 ) {
 				$_SESSION['username'] = $username;
                 $_SESSION['success'] = "You are now logged in";
 				header('location: index.php');
-			}else{
+            }
+			if (mysqli_num_rows($results2) == 1)
+				{
+				$_SESSION['username'] = $username;
+                $_SESSION['success'] = "You are now logged in";
+				header('location: Dashboard.php#Pending');
+				}
+			else{
                 array_push($errors, "Wrong username/password combination");
             }
 		}
