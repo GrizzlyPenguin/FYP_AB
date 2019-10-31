@@ -2,10 +2,10 @@
      <div data-ng-controller="postCtrl">
          <div class="col-md-12 col-sm-12 col-xs-12 p-0">
              <div class="table-tasks">
-                 <div ng-controller="sort">
+                 <div ng-controller="sort" style="margin-top:50px; margin-left:20px">
                      <div ng-controller="search">
                          <div class="tableTitle">
-                             <div class="row" style="margin-top:50px;">
+                             <div class="row">
                                  <h3>All tasks</h3>
                                  <div class="col p-0">
                                      <button data-toggle="modal" data-target="#myModal" class="btn btn-primary float-right">+ Ticket</button>
