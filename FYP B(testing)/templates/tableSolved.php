@@ -3,7 +3,7 @@
 ?>
 <div data-ng-controller="putCtrl">
     <div class="table-tasks " data-ng-controller="getCtrl">
-        <div ng-controller="sort">
+        <div ng-controller="sort" style="margin-top:50px; margin-left:20px">
             <div class="tableTitle">
                 <div class="row">
                     <h3>Personal Solved tasks</h3>
@@ -37,7 +37,7 @@
                             <tr class="text-center"data-ng-repeat="ticket in tickets |orderBy:column:reverse|filter:searchText" data-ng-show="(ticket.pid==CustID && ticket.status=='Solved') || (ticket.StaffID==EmpID && ticket.status=='Solved') " data-ng-click="init(ticket)">
                                 <td>{{ticket.ticketNo}}</td>
                                 <td>{{ticket.title}}</td>
-                                <td>{{ticket.desc}}</td>
+                                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:10px;">{{ticket.desc}}</td>
                                 <td>{{ticket.Name}}</td>
                                 <td>{{ticket.date}}</td>
                                 <td class="{{ticket.status}}"><b>{{ticket.status}}</b></td>
