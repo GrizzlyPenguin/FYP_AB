@@ -41,7 +41,7 @@
                             <span class="sr-only" data-ng-init="empInit('<?php echo $_SESSION['EmpID']; ?>')"></span>
                             <span class="sr-only" data-ng-init="custInit('<?php echo $_SESSION['CustID']; ?>')"></span>
                             <tbody>
-                                <tr class="text-center" data-ng-repeat="ticket in tickets |orderBy:column:reverse|filter:searchText" data-ng-show="((ticket.status=='Pending' && ticket.StaffID==EmpID) ||ticket.pid==CustID && (ticket.status=='Pending' || ticket.status=='Solved' || ticket.status=='Open'))" data-ng-click="init(ticket); initEmp()">
+                                <tr data-ng-repeat="ticket in tickets |orderBy:column:reverse|filter:searchText" data-ng-show="((ticket.status=='Pending' && ticket.StaffID==EmpID) || ticket.pid==CustID && (ticket.status=='Pending' || ticket.status=='Solved' || ticket.status=='Open'))" data-ng-click="init(ticket); initEmp()">
                                     <td>{{ticket.ticketNo}}</td>
                                     <td>{{ticket.title}}</td>
                                     <td>{{ticket.desc}}</td>
@@ -49,7 +49,7 @@
                                     <td>{{ticket.date}}</td>
                                     <td class="{{ticket.status}}"><b>{{ticket.status}}</b></td>
                                     <td data-ng-show="role">
-                                        <button id="edit" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#editModal" data-ng-click="init(ticket); searchName(ticket.pid); getLog(EmpID, ticket.ticketNo)"><i class="fas fa-edit"></i></button>
+                                        <button id="edit" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#editModal" data-ng-click="init(ticket); searchName(ticket.pid); getLog(ticket.ticketNo)"><i class="fas fa-edit"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -109,8 +109,8 @@
                                                 <!--<textarea value="{{cust_desc}}" data-ng-model="diagnosis" class="form-control w-100" rows="3" readonly></textarea>-->
                                             </div>
                                         </div>
-
                                     </div>
+                                    
                                     <br />
                                     <div class="row">
                                         <div class="col-md-6">
@@ -127,17 +127,51 @@
                                                 <option value="query">Query</option>
                                             </select>
                                         </div>
-
                                     </div>
+                                    <br/>
 
+                                   
+                                   <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="font-weight-bold">Additional Description: </label>
+                                            <br/>
+                                            <textarea value="{{addDesc}}" data-ng-model="addDesc" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write description here..."></textarea>
+                                        </div>
+                                    </div>
+                                    
                                     <hr>
                                     <!--lvl a-->
+                                    <label class="font-weight-bold">History: </label> <br>
+                                    <table class="table table-sm table-striped table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Diagnosis</th>
+                                                <th>Findings</th>
+                                                <th>Others</th>
+                                                <th>Cause</th>
+                                                <th>Written by</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="text-center" data-ng-repeat="log in logs">
+                                                <td>{{log.diagnosis}}</td>
+                                                <td>{{log.findings}}</td>
+                                                <td>{{log.others}}</td>
+                                                <td>{{log.cause}}</td>
+                                                <td>{{log.writtenBy}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+<!--
+                                    <br>
+                                    <label class="font-weight-bold" id="lastedit"> Last Edited by: </label> <br>
+                                    <label id="lasteditname" style="font-style: normal; font-weight: normal">date_name_id</label>
+                                    <p>or do it using list</p>
+-->
+                                   
+                                   
                                     <div data-ng-model="historyLog">
                                         <p class="font-weight-bold">Level A:</p>
-
-                                        <label class="font-weight-bold">Description:</label> <br>
-                                        <textarea value="{{historyLog.description}}" data-ng-model="description" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write description here..."></textarea>
-                                        <br>
                                         <label class="font-weight-bold">Diagnosis:</label> <br>
                                         <textarea value="{{historyLog.diagnosis}}" data-ng-model="diagnosis" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write diagnosis here..."></textarea>
                                         <br>
@@ -178,59 +212,14 @@
                                         <p>or do it using list</p>
 -->
                                     </div>
-                                    <!--lvl b-->
-                                    <div id="lvlb_section" data-ng-hide="role">
-                                        <hr>
-                                        <p>Level B:</p>
 
-                                        <label class="font-weight-bold">Diagnosis:</label> <br>
-                                        <textarea class="form-control z-depth-1" data-ng-model="diagnosis1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
-                                        <br>
-                                        <label class="font-weight-bold">Findings:</label>
-                                        <br>
-                                        <textarea class="form-control z-depth-1" data-ng-model="findings1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
-                                        <br>
-                                        <label class="font-weight-bold">Others:</label> <br>
-                                        <textarea class="form-control z-depth-1" data-ng-model="others1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
-                                        <br>
-                                        <label class="font-weight-bold">Nature of Cause:</label> <br>
-                                        <textarea class="form-control z-depth-1" data-ng-model="cause1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
-                                        <br>
-                                        <!--
-                                        <label class="font-weight-bold">Log:</label> <br>
-                                        <table>
-                                            <tr>
-                                                <th>Log</th>
-                                                <th>Time Planned</th>
-                                                <th>Start Date/Time</th>
-                                                <th>Complete Date/Time</th>
-                                                <th>Total Time Used</th>
-                                                <th>Status</th>
-                                                <th>UAT</th>
-                                            </tr>
-                                            <tr>
-                                                <td>log id</td>
-                                                <td>time-planned</td>
-                                                <td>start_dt</td>
-                                                <td>fin_dt</td>
-                                                <td>time_used</td>
-                                                <td>stat</td>
-                                                <td>user_test</td>
-                                            </tr>
-                                        </table>
-                                        <br>
-                                        <label class="font-weight-bold" id="lastedit" style="color: black"> Last Edited by: </label> <br>
-                                        <label id="lasteditname" style="font-style: normal; font-weight: normal">date_name_id</label>
--->
-                                    </div>
-
-                                   <div class="form-group">
+                                    <div class="form-group">
                                         <label for="transfer">Transfer task to: </label>
                                         <select class="browser-default custom-select" id="status" data-ng-model="TicketTransfer">
-                                            <option class = "text-capitalize" data-ng-repeat="emp in emps" value={{emp.id}} >{{emp.name}}</option>
+                                            <option class="text-capitalize" data-ng-repeat="emp in emps | filter: {id: '!'+EmpID}" value={{emp.id}}>{{emp.name}}</option>
                                         </select>
                                     </div>
-                                   
+
                                     <div class="form-group">
                                         <label for="status">Status</label>
                                         <select class="browser-default custom-select" id="status" data-ng-model="TicketStatus" data-ng-init="TicketStatus='Pending'">
@@ -244,7 +233,7 @@
 
                             <!-- Modal footer -->
                             <div class="modal-footer">
-                                <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postLog(description, diagnosis, findings, others, cause, EmpID, tno, TicketStatus, TicketTransfer)" data-dismiss="modal">Submit</button>
+                                <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postLog(addDesc, diagnosis, findings, others, cause, EmpID, tno, TicketStatus, TicketTransfer)" data-dismiss="modal">Submit</button>
                                 <button type="reset" class="btn btn-default">Reset</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
@@ -266,18 +255,6 @@
                             <!-- Modal body -->
                             <div class="modal-body">
                                 <form method="get" id="ticketForm">
-                                    <!--
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Type of Problems</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>sample 01</option>
-                                    <option>sample 02</option>
-                                    <option>sample 03</option>
-                                    <option>sample 04</option>
-                                    <option>sample 05</option>
-                                </select>
-                            </div>
--->
                                     <div class="form-group">
                                         <label for="title">Title</label>
                                         <input type="text" class="form-control w-100" data-ng-model="title" id="title">

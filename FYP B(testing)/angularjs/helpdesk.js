@@ -60,6 +60,7 @@ app.controller("getCtrl", function ($scope, $http) {
         $scope.warran = obj.warranty;
         $scope.domainName = obj.domain;
         $scope.name = obj.Name;
+        $scope.addDesc = obj.addDesc;
     };
     
     
@@ -93,7 +94,6 @@ app.controller("getCtrl", function ($scope, $http) {
         
     };    
 });
-
 
 app.controller("putCtrl", function ($scope, $http) {
     // property initialisation
@@ -143,13 +143,13 @@ app.controller("putCtrl", function ($scope, $http) {
                 });
     };
     
-    $scope.postLog = function (Description, Diagnosis, findings, others, cause, UserID, ticketID, ticketStat, transfer) {
+    $scope.postLog = function (addDesc, Diagnosis, findings, others, cause, UserID, ticketID, ticketStat, transfer) {
         // Prepare the data        
         $scope.msg=alert("Thank you! You have submitted the Log!");
         $scope.refresh=location.reload();
         var url = "api/insertHistoryLog.php",
             data = $.param({
-                Description: Description,
+                addDesc: addDesc,
                 Diagnosis: Diagnosis,
                 findings: findings,
                 pid: UserID,
@@ -171,8 +171,7 @@ app.controller("putCtrl", function ($scope, $http) {
                 function (response) {
                     // depends on the data value
                     // there may be instances of put failure
-                    if (response.data) {
-                        
+                    if (response.data) { 
                         console.log(response.data);
                     }
                 },
@@ -279,37 +278,10 @@ app.controller("postCtrl", function ($scope, $http) {
                 });
     };
     
-    $scope.getLog = function (pid, tNo) {
+    $scope.getLog = function (tNo) {
         // Prepare the data       
-        var url0 = "api/getDescription.php",
+        var url = "api/getHistoryLog.php",
             data = $.param({
-                UserID: pid,
-                tNo: tNo
-            }),
-            config = {
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-                }
-            };
-        
-        $http.post(url0, data, config)
-            .then(
-                function (response) {
-                    if (response.data) {
-                        $scope.description = response.data;
-                    }
-                },
-                function (response) {
-                    console.log("Service not Exists");
-                    $scope.statusval = response.status;
-                    $scope.statustext = response.statusText;
-                    $scope.headers = response.headers;
-                    console.log(response.data);
-                });
-        
-        var url = "api/getDiagnosis.php",
-            data = $.param({
-                UserID: pid,
                 tNo: tNo
             }),
             config = {
@@ -322,86 +294,7 @@ app.controller("postCtrl", function ($scope, $http) {
             .then(
                 function (response) {
                     if (response.data) {
-                        $scope.diagnosis = response.data;
-                    }
-                },
-                function (response) {
-                    console.log("Service not Exists");
-                    $scope.statusval = response.status;
-                    $scope.statustext = response.statusText;
-                    $scope.headers = response.headers;
-                    console.log(response.data);
-                });
-        
-        var url1 = "api/getFindings.php",
-            data = $.param({
-                UserID: pid,
-                tNo: tNo
-            }),
-            config = {
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-                }
-            };
-        
-        $http.post(url1, data, config)
-            .then(
-                function (response) {
-                    if (response.data) {
-                        $scope.findings = response.data;
-                        console.log(response.data);
-                    }
-                },
-                function (response) {
-                    console.log("Service not Exists");
-                    $scope.statusval = response.status;
-                    $scope.statustext = response.statusText;
-                    $scope.headers = response.headers;
-                    console.log(response.data);
-                });
-        
-        var url2 = "api/getOthers.php",
-            data = $.param({
-                UserID: pid,
-                tNo: tNo
-            }),
-            config = {
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-                }
-            };
-        
-        $http.post(url2, data, config)
-            .then(
-                function (response) {
-                    if (response.data) {
-                        $scope.others = response.data;
-                        console.log(response.data);
-                    }
-                },
-                function (response) {
-                    console.log("Service not Exists");
-                    $scope.statusval = response.status;
-                    $scope.statustext = response.statusText;
-                    $scope.headers = response.headers;
-                    console.log(response.data);
-                });
-        
-        var url3 = "api/getCause.php",
-            data = $.param({
-                UserID: pid,
-                tNo: tNo
-            }),
-            config = {
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-                }
-            };
-        $http.post(url3, data, config)
-            .then(
-                function (response) {
-                    if (response.data) {
-                        $scope.cause = response.data;
+                        $scope.logs = response.data;
                         console.log(response.data);
                     }
                 },

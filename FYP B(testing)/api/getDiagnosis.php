@@ -5,12 +5,10 @@
     $sql = 'error';
 	$outp = "";
 
-    if(isset($put_vars['UserID']) && isset($put_vars['tNo'])){
-        $pid = $put_vars['UserID'];
+    if(isset($put_vars['tNo'])){
         $ticketNo = $put_vars['tNo'];
 
-        $sql = "SELECT Diagnosis FROM HISTORYLOG WHERE EmpID = '". $pid . 
-            "' AND TicketNo = '". $ticketNo . "';";
+        $sql = "SELECT Diagnosis FROM HISTORYLOG WHERE TicketNo = '". $ticketNo . "';";
     }else{
          echo "Error: " . $sql . "<br>";
     }

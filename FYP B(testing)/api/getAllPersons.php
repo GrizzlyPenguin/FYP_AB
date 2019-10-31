@@ -16,7 +16,9 @@
         $outp .= '"date":"'  . $rs["DateReceived"] . '",';
         $outp .= '"status":"' . $rs["Status"] . '",'; 
         $outp .= '"warranty":"' . $rs["Warranty"] . '",'; 
-        $outp .= '"StaffID":"' . $rs["StaffID"] . '"'; 
+        $outp .= '"StaffID":"' . $rs["StaffID"] . '",'; 
+        $outp .= '"addDesc":"'  . $rs["AdditionalTicketDesc"] . '"'; 
+
             
         $result2 = $conn->query("SELECT Name FROM CUSTOMER WHERE CustID = '".$rs["PID"]."';");
         $result3 = $conn->query("SELECT EmpName FROM EMPLOYEE WHERE EmpID = '".$rs["PID"]."';");

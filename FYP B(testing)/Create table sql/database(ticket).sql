@@ -1,7 +1,5 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 
-
-
 CREATE TABLE IF NOT EXISTS `TICKET` (
 `TicketNo` int(3) NOT NULL,
   `TicketTitle` varchar(20) NOT NULL,
@@ -14,6 +12,7 @@ CREATE TABLE IF NOT EXISTS `TICKET` (
     `SourceOffline` varchar(50) NOT NULL,
     `Warranty` char(3),
     `StaffID` int(3) REFERENCES EMPLOYEE(EmpID),
+    `AdditionalTicketDesc` varchar(50),
     `JobID` varchar(3)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
