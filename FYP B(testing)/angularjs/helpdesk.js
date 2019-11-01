@@ -51,10 +51,11 @@ app.controller("getCtrl", function ($scope, $http) {
                 console.log(response.data);
                 // error handling routine
             });
-    
-    
+
+
     $scope.init = function (obj) {
         $scope.tno = obj.ticketNo;
+        $scope.tDate = obj.date;
         $scope.title = obj.title;
         $scope.cust_desc = obj.desc;
         $scope.warran = obj.warranty;
@@ -62,8 +63,8 @@ app.controller("getCtrl", function ($scope, $http) {
         $scope.name = obj.Name;
         $scope.addDesc = obj.addDesc;
     };
-    
-    
+
+
     $scope.initEmp = function () {
         // Prepare the data        
         var url = "api/getAllEmp.php",
@@ -72,7 +73,7 @@ app.controller("getCtrl", function ($scope, $http) {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
                 }
             };
-        
+
         $http.get(url, config)
             .then(
                 function (response) {
@@ -81,7 +82,7 @@ app.controller("getCtrl", function ($scope, $http) {
                     if (response.data) {
                         $scope.emps = response.data;
                         console.log(response.data);
-                        
+
                     }
                 },
                 function (response) {
@@ -90,9 +91,9 @@ app.controller("getCtrl", function ($scope, $http) {
                     $scope.statustext = response.statusText;
                     $scope.headers = response.headers();
                 });
-        
-        
-    };    
+
+
+    };
 });
 
 app.controller("putCtrl", function ($scope, $http) {
@@ -113,10 +114,10 @@ app.controller("putCtrl", function ($scope, $http) {
 
     $scope.putData = function (TicketNo, EmpID) {
         // Prepare the data
-        
-        $scope.msg=alert("Ticket is successfully accepted!");
+
+        $scope.msg = alert("Ticket is successfully accepted!");
         var url = "api/updatePerson.php";
-        $scope.refresh=location.reload();
+        $scope.refresh = location.reload();
         var data = $.param({
             TicketNo: TicketNo,
             EmpID: EmpID
@@ -142,11 +143,11 @@ app.controller("putCtrl", function ($scope, $http) {
                     $scope.headers = response.headers();
                 });
     };
-    
-    $scope.postLog = function (addDesc, Diagnosis, findings, others, cause, UserID, ticketID, ticketStat, transfer) {
+
+    $scope.postLog = function (addDesc, Diagnosis, findings, others, cause, UserID, ticketID, ticketStat, transfer, online, offline, jobType) {
         // Prepare the data        
-        $scope.msg=alert("Thank you! You have submitted the Log!");
-        $scope.refresh=location.reload();
+        $scope.msg = alert("Thank you! You have submitted the Log!");
+        $scope.refresh = location.reload();
         var url = "api/insertHistoryLog.php",
             data = $.param({
                 addDesc: addDesc,
@@ -156,22 +157,25 @@ app.controller("putCtrl", function ($scope, $http) {
                 others: others,
                 cause: cause,
                 ticketID: ticketID,
-                ticketStat: ticketStat, 
-                transfer: transfer
+                ticketStat: ticketStat,
+                transfer: transfer, 
+                online: online,
+                offline: offline, 
+                jobType: jobType
             }),
             config = {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
                 }
             };
-        
+
         //Call the services
         $http.post(url, data, config)
             .then(
                 function (response) {
                     // depends on the data value
                     // there may be instances of put failure
-                    if (response.data) { 
+                    if (response.data) {
                         console.log(response.data);
                     }
                 },
@@ -181,7 +185,7 @@ app.controller("putCtrl", function ($scope, $http) {
                     $scope.statustext = response.statusText;
                     $scope.headers = response.headers();
                 });
-        
+
     };
 });
 
@@ -211,8 +215,8 @@ app.controller("postCtrl", function ($scope, $http) {
     // define methods
     $scope.postData = function (TicketTitle, TicketDesc, UserID, warranty, domain, Status) {
         // Prepare the data        
-        $scope.msg=alert("Thank you! You have submitted the ticket!");
-        $scope.redirect=window.location="Dashboard.php#Pending";
+        $scope.msg = alert("Thank you! You have submitted the ticket!");
+        $scope.redirect = window.location = "Dashboard.php#Pending";
         var url = "api/insertPerson.php",
             data = $.param({
                 TicketTitle: TicketTitle,
@@ -227,7 +231,7 @@ app.controller("postCtrl", function ($scope, $http) {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
                 }
             };
-        
+
         //Call the services
         $http.post(url, data, config)
             .then(
@@ -246,8 +250,8 @@ app.controller("postCtrl", function ($scope, $http) {
                     $scope.headers = response.headers();
                 });
     };
-    
-      // define methods
+
+    // define methods
     $scope.searchName = function (pid) {
         // Prepare the data        
         var url = "api/getCustName.php",
@@ -259,7 +263,7 @@ app.controller("postCtrl", function ($scope, $http) {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
                 }
             };
-        
+
         $http.post(url, data, config)
             .then(
                 function (response) {
@@ -267,7 +271,7 @@ app.controller("postCtrl", function ($scope, $http) {
                     // there may be instances of put failure
                     if (response.data) {
                         $scope.CustName = response.data;
-//                        console.log(response.data);
+                        console.log(response.data);
                     }
                 },
                 function (response) {
@@ -277,7 +281,7 @@ app.controller("postCtrl", function ($scope, $http) {
                     $scope.headers = response.headers();
                 });
     };
-    
+
     $scope.getLog = function (tNo) {
         // Prepare the data       
         var url = "api/getHistoryLog.php",
@@ -289,7 +293,7 @@ app.controller("postCtrl", function ($scope, $http) {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
                 }
             };
-        
+
         $http.post(url, data, config)
             .then(
                 function (response) {
@@ -354,6 +358,73 @@ app.controller('sort', function ($scope, $location) {
     };
 
 });
+
+//#####################################################
+app.controller('search', function ($scope) {
+
+    //     var input, filter, table, tr, td, i, txtValue;
+    //              input = $scope.getElementById("myInput");
+    //              filter = input.value.toUpperCase();
+    //              table = $scope.getElementById("open");
+    //              tr = table.getElementsByTagName("tr");
+    //                   
+    //    
+    //               $scope.myFunction=function() {
+    //             
+    //                   
+    //              for (i = 0; i < tr.length; i++) {
+    //                td = tr[i].getElementsByTagName("td")[0];
+    //                if (td) {
+    //                  txtValue = td.textContent || td.innerText;
+    //                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+    //                    tr[i].style.display = "";
+    //                  } else {
+    //                    tr[i].style.display = "none";
+    //                  }
+    //                }       
+    //              }
+    //            }
+
+    $scope.searchKeyword = {}
+    $scope.SearchTerm = '$';
+
+});
+var expectFriendNames = function (expectedNames, key) {
+    element.all(by.repeater(key + ' in ticket').column(key + '.ticketNo')).then(function (arr) {
+        arr.forEach(function (wd, i) {
+            expect(wd.getText()).toMatch(expectedNames[i]);
+        });
+    });
+};
+
+it('should search across all fields when filtering with a string', function () {
+    var searchText = element(by.model('searchText'));
+    searchText.clear();
+    searchText.sendKeys('1');
+    expectFriendNames(['1'], 'ticket');
+
+    searchText.clear();
+    searchText.sendKeys('p');
+    expectFriendNames(['Pending'], 'ticket');
+});
+
+it('should search in specific fields when filtering with a predicate object', function () {
+    var searchAny = element(by.model('search.$'));
+    searchAny.clear();
+    searchAny.sendKeys('n');
+    expectFriendNames(['Pending', 'Open'], 'ticObj');
+});
+
+it('should use a equal comparison when comparator is true', function () {
+    var searchName = element(by.model('search.name'));
+    var strict = element(by.model('strict'));
+    searchName.clear();
+    searchName.sendKeys('Pending');
+    strict.click();
+    expectFriendNames(['Pending'], 'ticObj');
+});
+
+////////////////////////////////////////////////////
 
 
 app.controller('chartCtrl', function ($scope) {
@@ -631,76 +702,4 @@ app.controller('chartCtrl', function ($scope) {
     //            }
     //  }]
     //    });
-
-
-
-
-
 });
-
-//#####################################################
-app.controller('search', function ($scope) {
-
-    //     var input, filter, table, tr, td, i, txtValue;
-    //              input = $scope.getElementById("myInput");
-    //              filter = input.value.toUpperCase();
-    //              table = $scope.getElementById("open");
-    //              tr = table.getElementsByTagName("tr");
-    //                   
-    //    
-    //               $scope.myFunction=function() {
-    //             
-    //                   
-    //              for (i = 0; i < tr.length; i++) {
-    //                td = tr[i].getElementsByTagName("td")[0];
-    //                if (td) {
-    //                  txtValue = td.textContent || td.innerText;
-    //                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
-    //                    tr[i].style.display = "";
-    //                  } else {
-    //                    tr[i].style.display = "none";
-    //                  }
-    //                }       
-    //              }
-    //            }
-
-    $scope.searchKeyword = {}
-    $scope.SearchTerm = '$';
-
-});
-var expectFriendNames = function (expectedNames, key) {
-    element.all(by.repeater(key + ' in ticket').column(key + '.ticketNo')).then(function (arr) {
-        arr.forEach(function (wd, i) {
-            expect(wd.getText()).toMatch(expectedNames[i]);
-        });
-    });
-};
-
-it('should search across all fields when filtering with a string', function () {
-    var searchText = element(by.model('searchText'));
-    searchText.clear();
-    searchText.sendKeys('1');
-    expectFriendNames(['1'], 'ticket');
-
-    searchText.clear();
-    searchText.sendKeys('p');
-    expectFriendNames(['Pending'], 'ticket');
-});
-
-it('should search in specific fields when filtering with a predicate object', function () {
-    var searchAny = element(by.model('search.$'));
-    searchAny.clear();
-    searchAny.sendKeys('n');
-    expectFriendNames(['Pending', 'Open'], 'ticObj');
-});
-
-it('should use a equal comparison when comparator is true', function () {
-    var searchName = element(by.model('search.name'));
-    var strict = element(by.model('strict'));
-    searchName.clear();
-    searchName.sendKeys('Pending');
-    strict.click();
-    expectFriendNames(['Pending'], 'ticObj');
-});
-
-////////////////////////////////////////////////////

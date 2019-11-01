@@ -53,7 +53,7 @@
                                          <td>{{ticket.desc}}</td>
                                          <td>{{ticket.Name}}</td>
                                          <td>{{ticket.date}}</td>
-                                         <td class="text-center"><button data-toggle="modal" data-target="#viewModal" class="btn btn-primary" data-ng-click="init(ticket); searchName(ticket.pid)">View</button></td>
+                                         <td class="text-center"><button data-toggle="modal" data-target="#viewModal" class="btn btn-primary" data-ng-click="init(ticket); searchName(ticket.pid); getLog(ticket.ticketNo)">View</button></td>
                                          <td class="{{ticket.status}} text-center"><b>{{ticket.status}}</b></td>
                                      </tr>
                                  </tbody>
@@ -163,7 +163,7 @@
                                          <td>{{log.findings}}</td>
                                          <td>{{log.others}}</td>
                                          <td>{{log.cause}}</td>
-                                         <td>{{log.writtenBy}}</td>
+                                         <td class="text-center">{{log.writtenBy}}</td>
                                      </tr>
                                  </tbody>
                              </table>

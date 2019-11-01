@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `TICKET` (
     `Warranty` char(3),
     `StaffID` int(3) REFERENCES EMPLOYEE(EmpID),
     `AdditionalTicketDesc` varchar(50),
-    `JobID` varchar(3)
+    `JobType` char(15)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 ALTER TABLE `TICKET`

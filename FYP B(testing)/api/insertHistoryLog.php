@@ -1,8 +1,11 @@
 <?php
     include('dbconnect.php');
-    if(isset($_POST['Diagnosis']) || isset($_POST['findings']) || isset($_POST['others']) || isset($_POST['cause']) || isset($_POST['pid']) || isset($_POST['ticketID']) || isset($_POST['ticketStat']))
+    if(isset($_POST['Diagnosis']) || isset($_POST['findings']) || isset($_POST['others']) || isset($_POST['cause']) || isset($_POST['pid']) || isset($_POST['ticketID']) || isset($_POST['ticketStat']) || isset($_POST['addDesc']) || isset($_POST['online']) || isset($_POST['offline']) || !empty($_POST['jobType']))
     {
         $addDesc = $_POST['addDesc'];
+        $online = $_POST['online'];
+        $offline = $_POST['offline'];
+        $jobType = $_POST['jobType'];
         $Diagnosis = $_POST['Diagnosis'];
         $findings = $_POST['findings'];
         $others = $_POST['others'];
@@ -11,11 +14,7 @@
         $ticketID = $_POST['ticketID'];        
         $ticketStat = $_POST['ticketStat'];
         $transfer = $_POST['transfer'];
-        
-//        $sql = "INSERT INTO HISTORYLOG(Diagnosis, findings, others, cause, EmpID, ticketNo, WrittenBy) VALUES
-//        ('". $Diagnosis ."','" . $findings . "','".$others."','".$cause."','".$pid."' , '".$ticketID."', '".$pid."') 
-//        ON DUPLICATE KEY UPDATE Diagnosis = '".$Diagnosis."', findings = '".$findings."', others = '".$others."', cause = '".$cause."', WrittenBy = '".$pid."';";
-//        
+
         if (!empty($Diagnosis) || !empty($findings) || !empty($others) || !empty($cause))   {
             $sql = "INSERT INTO HISTORYLOG(Diagnosis, findings, others, cause, EmpID, ticketNo, WrittenBy) VALUES
             ('". $Diagnosis ."','" . $findings . "','".$others."','".$cause."','".$pid."','".$ticketID."','".$pid."')";
@@ -33,6 +32,15 @@
                 echo "Addtional tikcet description updated successfully";
             } else {
                 echo "Error: " . $sql4 . "<br>" . $conn->error;
+            }
+        }
+        
+        if (!empty($_POST['online']) || !empty($_POST['offline']) || !empty($_POST['jobType'])){
+            $sql5 = "UPDATE TICKET SET SourceOnline = '". $online . "', SourceOffline = '".$offline."', JobType = '".$jobType."'WHERE ticketNo = '".$ticketID."';";
+             if ($conn->query($sql5) === TRUE) {
+                echo "Addtional tikcet description updated successfully";
+            } else {
+                echo "Error: " . $sql5 . "<br>" . $conn->error;
             }
         }
         

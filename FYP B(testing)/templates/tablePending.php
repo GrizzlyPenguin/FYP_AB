@@ -89,6 +89,10 @@
                                                 <input type="radio" value="no" data-ng-show="warran=='no'" checked />
                                                 <label>No</label>
                                             </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <label for="submitDate" class="font-weight-bold">Date Submit: </label>
+                                                <label id="date">{{tDate}}</label>
+                                            </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6 col-sm-12">
@@ -116,13 +120,12 @@
                                         <div class="col-md-6">
                                             <label for="source" class="font-weight-bold">Source Code: </label>
                                             <br />
-                                            <input type="text" class="form-control w-100" placeholder="Online cloud" />
-                                            <p></p>
-                                            <input type="text" class="form-control w-100" placeholder="Offline Source" />
+                                            <input type="text" data-ng-model="online" class="form-control w-100" placeholder="Online cloud" />
+                                            <input type="text" data-ng-model="offline" class="form-control w-100" placeholder="Offline Source" />
                                         </div>
                                         <div class="col-md-6">
                                             <label class="font-weight-bold">Job Type: </label>
-                                            <select class="browser-default custom-select">
+                                            <select data-ng-model="jobType" class="browser-default custom-select">
                                                 <option value="log">Problem Log</option>
                                                 <option value="query">Query</option>
                                             </select>
@@ -234,7 +237,7 @@
 
                             <!-- Modal footer -->
                             <div class="modal-footer">
-                                <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postLog(addDesc, diagnosis, findings, others, cause, EmpID, tno, TicketStatus, TicketTransfer)" data-dismiss="modal">Submit</button>
+                                <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postLog(addDesc, diagnosis, findings, others, cause, EmpID, tno, TicketStatus, TicketTransfer, online, offline, jobType)" data-dismiss="modal">Submit</button>
                                 <button type="reset" class="btn btn-default">Reset</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>

@@ -49,31 +49,6 @@
                     <!-- Modal body -->
                     <div class="modal-body">
                         <form method="get" id="ticketForm">
-                            <!--
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Type of Problems</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>sample 01</option>
-                                    <option>sample 02</option>
-                                    <option>sample 03</option>
-                                    <option>sample 04</option>
-                                    <option>sample 05</option>
-                                </select>
-                            </div>
--->
-                           <!-- <div class="form-group">
-                                <label for="title">Title</label>
-                                <input type="text" class="form-control w-100" data-ng-model="TicketTitle" id="title">
-                            </div>
-                            <div class="form-group">
-                                <label for="Textarea1">Description</label>
-                                <textarea class="form-control" id="Textarea1" rows="3" data-ng-model="TicketDesc"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="FormControlFile1">Attachments</label>
-                                <input type="file" class="form-control-file" id="FormControlFile1">
-                            </div>-->
-                            
                             <div class="form-group">
                                 <label for="title">Title</label>
                                 <input type="text" class="form-control w-100" data-ng-model="TicketTitle" id="title">
@@ -104,7 +79,7 @@
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <span class="sr-only" data-ng-init="userInit('<?php echo $_SESSION['CustID']; ?>')"></span>
-                        <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postData(TicketTitle, TicketDesc, UserID)" data-dismiss="modal">Submit</button>
+                        <button type="submit" form="ticketForm" value="Submit" class="btn btn-primary" data-ng-click="postData(TicketTitle, TicketDesc, UserID, warranty, domain)" data-dismiss="modal">Submit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
