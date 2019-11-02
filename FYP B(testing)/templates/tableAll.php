@@ -58,9 +58,9 @@
                                      </tr>
                                  </tbody>
                              </table>
-							<div class="dataTables_paginate paging_simple_numbers">
-								<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" items-per-page="pageSize" max-size="3" boundary-links="true" rotate="false" ></pagination>
-							</div>
+                             <div class="dataTables_paginate paging_simple_numbers">
+                                 <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" items-per-page="pageSize" max-size="3" boundary-links="true" rotate="false"></pagination>
+                             </div>
                          </div>
                      </div>
                  </div>
@@ -114,25 +114,23 @@
                                          <!--<textarea value="{{cust_desc}}" data-ng-model="diagnosis" class="form-control w-100" rows="3" readonly></textarea>-->
                                      </div>
                                  </div>
+                                 <div class="row">
+                                     <div class="col-md-6">
+                                         <label class="font-weight-bold">Job Type: </label>
+                                         {{jobType}}
+                                     </div>
+                                 </div>
                              </div>
                              <br />
                              <hr>
                              <div class="row">
-                                 <div class="col-md-6">
+                                 <div class="col-md-12">
                                      <label for="source" class="font-weight-bold">Source Code: </label>
-                                     <br />
-                                     <input type="text" class="form-control w-100" placeholder="Online cloud" />
-                                     <p></p>
-                                     <input type="text" class="form-control w-100" placeholder="Offline Source" />
+                                     <br />                                     
+                                     Online: {{online}}<br />
+                                     Offline: {{offline}}
                                  </div>
-                                 <div class="col-md-6">
-                                     <label class="font-weight-bold">Job Type: </label>
-                                     <select class="browser-default custom-select">
-                                         <option value="log">Problem Log</option>
-                                         <option value="query">Query</option>
-                                     </select>
-                                 </div>
-
+                                 
                              </div>
                              <br />
                              <hr>

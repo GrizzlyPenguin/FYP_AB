@@ -160,7 +160,7 @@ hr {
 
 .sidebar-header {
     font-size: 20px;
-    float: left;
+    float: left!important;
 }
 
 .list-group-item {
@@ -276,8 +276,6 @@ textarea {
     border-color: #2c2c2c;
     white-space: nowrap;
 }
-
-
 
 .card-body {
     color: black;

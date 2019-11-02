@@ -62,6 +62,9 @@ app.controller("getCtrl", function ($scope, $http) {
         $scope.domainName = obj.domain;
         $scope.name = obj.Name;
         $scope.addDesc = obj.addDesc;
+        $scope.online = obj.online;
+        $scope.offline = obj.offline;
+        $scope.jobType = obj.jobType;
     };
 
 

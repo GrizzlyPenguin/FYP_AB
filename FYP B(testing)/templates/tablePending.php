@@ -113,35 +113,38 @@
                                                 <!--<textarea value="{{cust_desc}}" data-ng-model="diagnosis" class="form-control w-100" rows="3" readonly></textarea>-->
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="font-weight-bold">Job Type: </label>
+                                                <select data-ng-model="jobType" class="col-md-6 browser-default custom-select">
+                                                    <option value="log">Problem Log</option>
+                                                    <option value="query">Query</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </div>
-                                    
+
                                     <br />
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <label for="source" class="font-weight-bold">Source Code: </label>
                                             <br />
                                             <input type="text" data-ng-model="online" class="form-control w-100" placeholder="Online cloud" />
                                             <input type="text" data-ng-model="offline" class="form-control w-100" placeholder="Offline Source" />
                                         </div>
-                                        <div class="col-md-6">
-                                            <label class="font-weight-bold">Job Type: </label>
-                                            <select data-ng-model="jobType" class="browser-default custom-select">
-                                                <option value="log">Problem Log</option>
-                                                <option value="query">Query</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <br/>
 
-                                   
-                                   <div class="row">
+                                    </div>
+                                    <br />
+
+
+                                    <div class="row">
                                         <div class="col-md-12">
                                             <label class="font-weight-bold">Additional Description: </label>
-                                            <br/>
+                                            <br />
                                             <textarea value="{{addDesc}}" data-ng-model="addDesc" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write description here..."></textarea>
                                         </div>
                                     </div>
-                                    
+
                                     <hr>
                                     <!--lvl a-->
                                     <label class="font-weight-bold">History: </label> <br>
@@ -165,14 +168,14 @@
                                             </tr>
                                         </tbody>
                                     </table>
-<!--
+                                    <!--
                                     <br>
                                     <label class="font-weight-bold" id="lastedit"> Last Edited by: </label> <br>
                                     <label id="lasteditname" style="font-style: normal; font-weight: normal">date_name_id</label>
                                     <p>or do it using list</p>
 -->
-                                   
-                                   
+
+
                                     <div data-ng-model="historyLog">
                                         <p class="font-weight-bold">Level A:</p>
                                         <label class="font-weight-bold">Diagnosis:</label> <br>
@@ -187,7 +190,7 @@
                                         <label class="font-weight-bold">Nature of Cause:</label> <br>
                                         <textarea value="{{historyLog.cause}}" data-ng-model="cause" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
                                         <br>
-                                        <!--
+                                        
                                         <label class="font-weight-bold">Log:</label> <br>
                                         <table border="1px">
                                             <tr>
@@ -213,7 +216,7 @@
                                         <label class="font-weight-bold" id="lastedit"> Last Edited by: </label> <br>
                                         <label id="lasteditname" style="font-style: normal; font-weight: normal">date_name_id</label>
                                         <p>or do it using list</p>
--->
+
                                     </div>
 
                                     <div class="form-group">
